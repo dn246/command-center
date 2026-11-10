@@ -1,0 +1,7116 @@
+{
+  "meta": {
+    "title": "Command Center Exercise: Synthetic Data Set",
+    "version": "1.0",
+    "as_of_date": "2026-11-09",
+    "period": {
+      "name": "Q4",
+      "start": "2026-10-01",
+      "end": "2026-12-31",
+      "days_elapsed": 40,
+      "days_total": 92,
+      "expected_linear_attainment_pct": 43.5
+    },
+    "notice": "All data is synthetic and fictional. Names, numbers, and relationships do not represent any real person or organization.",
+    "scope": "One Enablement Lead's book of 60 team members.",
+    "conventions": {
+      "null": "Value unavailable or not yet computed. Treat as missing, not zero.",
+      "ages": "*_age_days = days since that data group was last refreshed.",
+      "currency": "USD",
+      "percentages": "Whole numbers unless noted"
+    }
+  },
+  "initiatives": [
+    {
+      "id": "INI-01",
+      "name": "Seasonal Push",
+      "description": "Year-end push on a priority offering. Goal: client conversations about the offering.",
+      "start": "2026-10-01",
+      "end": "2026-12-18",
+      "metric": "client_conversations",
+      "target_per_member": 6,
+      "eligible": "Tenure 1+ years, active clients >= 20"
+    },
+    {
+      "id": "INI-02",
+      "name": "Dormant Client Reactivation",
+      "description": "Re-engage clients with no contact in 12+ months.",
+      "start": "2026-10-15",
+      "end": "2026-12-31",
+      "metric": "dormant_clients_contacted",
+      "target_per_member": 10,
+      "eligible": "Dormant clients >= 10"
+    },
+    {
+      "id": "INI-03",
+      "name": "Whitespace Sprint",
+      "description": "Proposals to existing clients with likely unmet needs.",
+      "start": "2026-11-01",
+      "end": "2026-12-15",
+      "metric": "proposals_sent",
+      "target_per_member": 4,
+      "eligible": "Whitespace clients >= 5"
+    },
+    {
+      "id": "INI-04",
+      "name": "New Team Member Ramp",
+      "description": "Structured first-year activity plan with coaching checkpoints.",
+      "start": "2026-09-01",
+      "end": "2027-03-31",
+      "metric": "ramp_milestones_completed",
+      "target_per_member": 5,
+      "eligible": "Tenure under 1 year"
+    }
+  ],
+  "team_members": [
+    {
+      "id": "TM-1001",
+      "display_name": "Selin O.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 180,
+          "attainment_pct": 48.3,
+          "pace_vs_plan_pct": 111
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 19,
+        "touches_prior_30d": 17,
+        "activity_trend": "up",
+        "activity_change_pct": 12,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 13,
+        "meetings_planned_30d": 16,
+        "tool_logins_30d": 12
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 282000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 1,
+          "proposal": 1,
+          "decision": 2
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.92,
+        "win_rate_pct_90d": 31,
+        "avg_cycle_days": 47
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 21,
+          "offering_b_pct": 70,
+          "offering_c_pct": 9
+        },
+        "change_vs_prior_quarter_pct": 29
+      },
+      "book": {
+        "active_clients": 123,
+        "dormant_clients": 8,
+        "dormant_est_value_usd": 113000,
+        "whitespace_clients": 9,
+        "top3_client_share_pct": 62,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 4,
+          "target": 6,
+          "days_to_first_action": 12,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 92,
+        "last_coaching_days_ago": 108,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 14,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 290000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 54,
+          "INI-02": null,
+          "INI-03": 63,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 804,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "average_deal_size_usd"
+        ]
+      }
+    },
+    {
+      "id": "TM-1002",
+      "display_name": "Gavin D.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "1-3 yrs",
+        "territory": "Midwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 70,
+          "attainment_pct": 31.1,
+          "pace_vs_plan_pct": 71
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 9,
+        "touches_prior_30d": 19,
+        "activity_trend": "down",
+        "activity_change_pct": -53,
+        "days_since_last_activity": 19,
+        "meetings_held_30d": 6,
+        "meetings_planned_30d": 14,
+        "tool_logins_30d": 16
+      },
+      "pipeline": {
+        "open_opportunities": 14,
+        "open_value_usd": 327000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 9,
+          "proposal": 2,
+          "decision": 0
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.84,
+        "win_rate_pct_90d": 23,
+        "avg_cycle_days": 62
+      },
+      "production": {
+        "average_deal_size_usd": 22800,
+        "offering_mix": {
+          "offering_a_pct": 26,
+          "offering_b_pct": 37,
+          "offering_c_pct": 37
+        },
+        "change_vs_prior_quarter_pct": 5
+      },
+      "book": {
+        "active_clients": 136,
+        "dormant_clients": 12,
+        "dormant_est_value_usd": 83000,
+        "whitespace_clients": 15,
+        "top3_client_share_pct": 23,
+        "clients_lost_12m": 9,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 21,
+        "last_coaching_days_ago": 15,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 80,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 137000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 78,
+          "INI-02": 89,
+          "INI-03": 85,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 53% vs. prior 30 days",
+          "No logged activity in 19 days"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [
+        "approved_leave"
+      ],
+      "data_quality": {
+        "days_of_data": 678,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 6,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1003",
+      "display_name": "Marcus D.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 58.7,
+          "pace_vs_plan_pct": 135
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 29,
+        "touches_prior_30d": 23,
+        "activity_trend": "up",
+        "activity_change_pct": 26,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 5,
+        "meetings_planned_30d": 6,
+        "tool_logins_30d": 34
+      },
+      "pipeline": {
+        "open_opportunities": 9,
+        "open_value_usd": 527000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 3,
+          "proposal": 3,
+          "decision": 2
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.75,
+        "win_rate_pct_90d": 37,
+        "avg_cycle_days": 92
+      },
+      "production": {
+        "average_deal_size_usd": 60700,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 21
+      },
+      "book": {
+        "active_clients": 72,
+        "dormant_clients": 7,
+        "dormant_est_value_usd": 74000,
+        "whitespace_clients": 8,
+        "top3_client_share_pct": 52,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 8
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 62,
+        "last_coaching_days_ago": 39,
+        "last_coaching_topic": "Goal planning"
+      },
+      "ai": {
+        "priority_score": 12,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 210000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 80,
+          "INI-02": null,
+          "INI-03": 94,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 177,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 3,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1004",
+      "display_name": "Mateo T.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "1-3 yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 70,
+          "attainment_pct": 46.8,
+          "pace_vs_plan_pct": 108
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 17,
+        "touches_prior_30d": 21,
+        "activity_trend": "down",
+        "activity_change_pct": -19,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 17,
+        "meetings_planned_30d": 19,
+        "tool_logins_30d": 45
+      },
+      "pipeline": {
+        "open_opportunities": 9,
+        "open_value_usd": 204000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 4,
+          "proposal": 2,
+          "decision": 2
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.5,
+        "win_rate_pct_90d": 33,
+        "avg_cycle_days": 57
+      },
+      "production": {
+        "average_deal_size_usd": 20500,
+        "offering_mix": {
+          "offering_a_pct": 66,
+          "offering_b_pct": 22,
+          "offering_c_pct": 12
+        },
+        "change_vs_prior_quarter_pct": 22
+      },
+      "book": {
+        "active_clients": 74,
+        "dormant_clients": 14,
+        "dormant_est_value_usd": 40000,
+        "whitespace_clients": 27,
+        "top3_client_share_pct": 40,
+        "clients_lost_12m": 8,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 9,
+          "target": 10,
+          "days_to_first_action": 4,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "completed",
+          "progress": 4,
+          "target": 4,
+          "days_to_first_action": 6,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 63,
+        "last_coaching_days_ago": 212,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 33,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 187000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 51,
+          "INI-02": 79,
+          "INI-03": 86,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 19% vs. prior 30 days",
+          "27 clients with likely unmet needs",
+          "14 dormant clients (est. $40,000)"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 296,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 21,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1005",
+      "display_name": "Noor K.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Southwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 60,
+          "attainment_pct": 14.3,
+          "pace_vs_plan_pct": 33
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 7,
+        "touches_prior_30d": 4,
+        "activity_trend": "up",
+        "activity_change_pct": 75,
+        "days_since_last_activity": 5,
+        "meetings_held_30d": 14,
+        "meetings_planned_30d": 17,
+        "tool_logins_30d": 57
+      },
+      "pipeline": {
+        "open_opportunities": 1,
+        "open_value_usd": 22000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 0,
+          "proposal": 0,
+          "decision": 0
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.72,
+        "win_rate_pct_90d": null,
+        "avg_cycle_days": null
+      },
+      "production": {
+        "average_deal_size_usd": 33700,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": -23
+      },
+      "book": {
+        "active_clients": 16,
+        "dormant_clients": 2,
+        "dormant_est_value_usd": 18000,
+        "whitespace_clients": 3,
+        "top3_client_share_pct": 73,
+        "clients_lost_12m": 1,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 71,
+        "last_coaching_days_ago": 24,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 32,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 56000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": null,
+          "INI-04": 55
+        },
+        "reason_codes": [
+          "Pace at 33% of plan"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 22,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 9,
+        "missing_fields": [
+          "offering_mix",
+          "win_rate_pct",
+          "avg_cycle_days"
+        ]
+      }
+    },
+    {
+      "id": "TM-1006",
+      "display_name": "Devon P.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Midwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 50,
+          "attainment_pct": 23.2,
+          "pace_vs_plan_pct": 53
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 11,
+        "touches_prior_30d": 7,
+        "activity_trend": "up",
+        "activity_change_pct": 57,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 6,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 29
+      },
+      "pipeline": {
+        "open_opportunities": 2,
+        "open_value_usd": 35000,
+        "stage_distribution": {
+          "prospect": 0,
+          "discovery": 0,
+          "proposal": 1,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.66,
+        "win_rate_pct_90d": 24,
+        "avg_cycle_days": 91
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 9
+      },
+      "book": {
+        "active_clients": 25,
+        "dormant_clients": 1,
+        "dormant_est_value_usd": 5000,
+        "whitespace_clients": 2,
+        "top3_client_share_pct": 51,
+        "clients_lost_12m": 0,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 8
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "started",
+          "progress": 0,
+          "target": 5,
+          "days_to_first_action": 10,
+          "historical_responsiveness": null
+        }
+      },
+      "capability": {
+        "training_status": "overdue",
+        "feature_adoption_score": 71,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 20,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 16000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": null,
+          "INI-04": 40
+        },
+        "reason_codes": [
+          "Pace at 53% of plan",
+          "Required training overdue"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 16,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "average_deal_size_usd",
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1007",
+      "display_name": "Declan G.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "West",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 170,
+          "attainment_pct": 39.7,
+          "pace_vs_plan_pct": 91
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 17,
+        "touches_prior_30d": 18,
+        "activity_trend": "flat",
+        "activity_change_pct": -6,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 13,
+        "meetings_planned_30d": 15,
+        "tool_logins_30d": 14
+      },
+      "pipeline": {
+        "open_opportunities": 6,
+        "open_value_usd": 477000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 1,
+          "proposal": 2,
+          "decision": 0
+        },
+        "stalled_opportunities": 4,
+        "pipeline_coverage_ratio": 0.32,
+        "win_rate_pct_90d": 24,
+        "avg_cycle_days": 60
+      },
+      "production": {
+        "average_deal_size_usd": 87600,
+        "offering_mix": {
+          "offering_a_pct": 44,
+          "offering_b_pct": 50,
+          "offering_c_pct": 6
+        },
+        "change_vs_prior_quarter_pct": -8
+      },
+      "book": {
+        "active_clients": 60,
+        "dormant_clients": 15,
+        "dormant_est_value_usd": 221000,
+        "whitespace_clients": 15,
+        "top3_client_share_pct": 55,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 7,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 4,
+          "target": 6,
+          "days_to_first_action": 9,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 69,
+        "last_coaching_days_ago": 106,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 64,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 677000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 73,
+          "INI-02": 78,
+          "INI-03": 87,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "4 stalled opportunities",
+          "15 clients with likely unmet needs",
+          "15 dormant clients (est. $221,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 863,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 3,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1008",
+      "display_name": "Dana S.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 140,
+          "attainment_pct": 25.4,
+          "pace_vs_plan_pct": 58
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 14,
+        "touches_prior_30d": 22,
+        "activity_trend": "down",
+        "activity_change_pct": -36,
+        "days_since_last_activity": 10,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 8,
+        "tool_logins_30d": 20
+      },
+      "pipeline": {
+        "open_opportunities": 4,
+        "open_value_usd": 449000,
+        "stage_distribution": {
+          "prospect": 0,
+          "discovery": 1,
+          "proposal": 2,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.37,
+        "win_rate_pct_90d": 24,
+        "avg_cycle_days": 51
+      },
+      "production": {
+        "average_deal_size_usd": 100400,
+        "offering_mix": {
+          "offering_a_pct": 54,
+          "offering_b_pct": 37,
+          "offering_c_pct": 9
+        },
+        "change_vs_prior_quarter_pct": 10
+      },
+      "book": {
+        "active_clients": 157,
+        "dormant_clients": 4,
+        "dormant_est_value_usd": 70000,
+        "whitespace_clients": 10,
+        "top3_client_share_pct": 47,
+        "clients_lost_12m": 8,
+        "clients_at_risk": 3,
+        "upcoming_events_90d": 5
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 3,
+          "target": 4,
+          "days_to_first_action": 10,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 26,
+        "last_coaching_days_ago": 21,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 80,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 382000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 64,
+          "INI-02": null,
+          "INI-03": 89,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 36% vs. prior 30 days",
+          "No logged activity in 10 days"
+        ],
+        "confidence": "high"
+      },
+      "flags": [
+        "approved_leave"
+      ],
+      "data_quality": {
+        "days_of_data": 269,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 3,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1009",
+      "display_name": "Naomi G.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "West",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 100,
+          "attainment_pct": 31.6,
+          "pace_vs_plan_pct": 73
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 31,
+        "touches_prior_30d": 31,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 6,
+        "meetings_held_30d": 14,
+        "meetings_planned_30d": 17,
+        "tool_logins_30d": 39
+      },
+      "pipeline": {
+        "open_opportunities": 4,
+        "open_value_usd": 147000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 1,
+          "proposal": 0,
+          "decision": 0
+        },
+        "stalled_opportunities": 4,
+        "pipeline_coverage_ratio": 0.37,
+        "win_rate_pct_90d": 19,
+        "avg_cycle_days": 45
+      },
+      "production": {
+        "average_deal_size_usd": 53500,
+        "offering_mix": {
+          "offering_a_pct": 21,
+          "offering_b_pct": 29,
+          "offering_c_pct": 50
+        },
+        "change_vs_prior_quarter_pct": -30
+      },
+      "book": {
+        "active_clients": 83,
+        "dormant_clients": 23,
+        "dormant_est_value_usd": 318000,
+        "whitespace_clients": 2,
+        "top3_client_share_pct": 38,
+        "clients_lost_12m": 6,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 53,
+        "last_coaching_days_ago": 55,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 78,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 243000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 43,
+          "INI-02": 81,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "4 stalled opportunities",
+          "23 dormant clients (est. $318,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 599,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 1,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1010",
+      "display_name": "Aisha F.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "West",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 42.9,
+          "pace_vs_plan_pct": 99
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 19,
+        "touches_prior_30d": 16,
+        "activity_trend": "up",
+        "activity_change_pct": 19,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 9,
+        "meetings_planned_30d": 11,
+        "tool_logins_30d": 14
+      },
+      "pipeline": {
+        "open_opportunities": 11,
+        "open_value_usd": 345000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 4,
+          "proposal": 2,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.82,
+        "win_rate_pct_90d": 35,
+        "avg_cycle_days": 95
+      },
+      "production": {
+        "average_deal_size_usd": 44200,
+        "offering_mix": {
+          "offering_a_pct": 60,
+          "offering_b_pct": 11,
+          "offering_c_pct": 29
+        },
+        "change_vs_prior_quarter_pct": 15
+      },
+      "book": {
+        "active_clients": 50,
+        "dormant_clients": 22,
+        "dormant_est_value_usd": 187000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 47,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 0,
+          "target": 6,
+          "days_to_first_action": 4,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 3,
+          "target": 10,
+          "days_to_first_action": 11,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 0,
+          "target": 4,
+          "days_to_first_action": 14,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 71,
+        "last_coaching_days_ago": 222,
+        "last_coaching_topic": "Goal planning"
+      },
+      "ai": {
+        "priority_score": 21,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 194000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 92,
+          "INI-02": 84,
+          "INI-03": 76,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "22 dormant clients (est. $187,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 545,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1011",
+      "display_name": "Maya B.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 55.0,
+          "pace_vs_plan_pct": 126
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 23,
+        "touches_prior_30d": 22,
+        "activity_trend": "flat",
+        "activity_change_pct": 5,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 11,
+        "meetings_planned_30d": 13,
+        "tool_logins_30d": 38
+      },
+      "pipeline": {
+        "open_opportunities": 10,
+        "open_value_usd": 465000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 2,
+          "proposal": 2,
+          "decision": 2
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 1.36,
+        "win_rate_pct_90d": 36,
+        "avg_cycle_days": 39
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 35,
+          "offering_b_pct": 52,
+          "offering_c_pct": 13
+        },
+        "change_vs_prior_quarter_pct": 15
+      },
+      "book": {
+        "active_clients": 137,
+        "dormant_clients": 14,
+        "dormant_est_value_usd": 108000,
+        "whitespace_clients": 10,
+        "top3_client_share_pct": 42,
+        "clients_lost_12m": 0,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 4,
+          "target": 10,
+          "days_to_first_action": 9,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 1,
+          "target": 4,
+          "days_to_first_action": 4,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 77,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 17,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 193000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 95,
+          "INI-02": 94,
+          "INI-03": 94,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "14 dormant clients (est. $108,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 764,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": [
+          "average_deal_size_usd"
+        ]
+      }
+    },
+    {
+      "id": "TM-1012",
+      "display_name": "Ben D.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "West",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 140,
+          "attainment_pct": 54.3,
+          "pace_vs_plan_pct": 125
+        }
+      },
+      "activity": {
+        "touches_7d": 8,
+        "touches_30d": 24,
+        "touches_prior_30d": 23,
+        "activity_trend": "flat",
+        "activity_change_pct": 4,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 12,
+        "meetings_planned_30d": 13,
+        "tool_logins_30d": 29
+      },
+      "pipeline": {
+        "open_opportunities": 11,
+        "open_value_usd": 1126000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 3,
+          "proposal": 5,
+          "decision": 1
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 1.25,
+        "win_rate_pct_90d": 35,
+        "avg_cycle_days": 65
+      },
+      "production": {
+        "average_deal_size_usd": 98700,
+        "offering_mix": {
+          "offering_a_pct": 52,
+          "offering_b_pct": 28,
+          "offering_c_pct": 20
+        },
+        "change_vs_prior_quarter_pct": 24
+      },
+      "book": {
+        "active_clients": 113,
+        "dormant_clients": 21,
+        "dormant_est_value_usd": 364000,
+        "whitespace_clients": 10,
+        "top3_client_share_pct": 34,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 3
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 1,
+          "target": 6,
+          "days_to_first_action": 7,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 67,
+        "last_coaching_days_ago": 106,
+        "last_coaching_topic": "Goal planning"
+      },
+      "ai": {
+        "priority_score": 34,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 567000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 88,
+          "INI-02": 94,
+          "INI-03": 57,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "2 stalled opportunities",
+          "21 dormant clients (est. $364,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 299,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1013",
+      "display_name": "Yara N.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 150,
+          "attainment_pct": 28.7,
+          "pace_vs_plan_pct": 66
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 14,
+        "touches_prior_30d": 27,
+        "activity_trend": "down",
+        "activity_change_pct": -48,
+        "days_since_last_activity": 17,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 9,
+        "tool_logins_30d": 13
+      },
+      "pipeline": {
+        "open_opportunities": 4,
+        "open_value_usd": 415000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 1,
+          "proposal": 0,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.71,
+        "win_rate_pct_90d": 16,
+        "avg_cycle_days": 67
+      },
+      "production": {
+        "average_deal_size_usd": 87300,
+        "offering_mix": {
+          "offering_a_pct": 23,
+          "offering_b_pct": 36,
+          "offering_c_pct": 41
+        },
+        "change_vs_prior_quarter_pct": -1
+      },
+      "book": {
+        "active_clients": 54,
+        "dormant_clients": 18,
+        "dormant_est_value_usd": 404000,
+        "whitespace_clients": 3,
+        "top3_client_share_pct": 30,
+        "clients_lost_12m": 9,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 9
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": null,
+        "last_coaching_days_ago": 55,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 97,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 369000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 75,
+          "INI-02": 86,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 48% vs. prior 30 days",
+          "No logged activity in 17 days"
+        ],
+        "confidence": "high"
+      },
+      "flags": [
+        "approved_leave"
+      ],
+      "data_quality": {
+        "days_of_data": 305,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "feature_adoption_score"
+        ]
+      }
+    },
+    {
+      "id": "TM-1014",
+      "display_name": "Victor S.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "7+ yrs",
+        "territory": "West",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 160,
+          "attainment_pct": 49.0,
+          "pace_vs_plan_pct": 113
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 19,
+        "touches_prior_30d": 19,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 3,
+        "meetings_held_30d": 18,
+        "meetings_planned_30d": 20,
+        "tool_logins_30d": 51
+      },
+      "pipeline": {
+        "open_opportunities": 13,
+        "open_value_usd": 1024000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 5,
+          "proposal": 2,
+          "decision": 4
+        },
+        "stalled_opportunities": 4,
+        "pipeline_coverage_ratio": 0.98,
+        "win_rate_pct_90d": 34,
+        "avg_cycle_days": 61
+      },
+      "production": {
+        "average_deal_size_usd": 75300,
+        "offering_mix": {
+          "offering_a_pct": 70,
+          "offering_b_pct": 11,
+          "offering_c_pct": 19
+        },
+        "change_vs_prior_quarter_pct": 29
+      },
+      "book": {
+        "active_clients": 75,
+        "dormant_clients": 24,
+        "dormant_est_value_usd": 236000,
+        "whitespace_clients": 7,
+        "top3_client_share_pct": 47,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-02": {
+          "status": "assigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 83,
+        "last_coaching_days_ago": 179,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 32,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 310000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 56,
+          "INI-02": 86,
+          "INI-03": 59,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "4 stalled opportunities",
+          "24 dormant clients (est. $236,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 501,
+        "activity_data_age_days": 5,
+        "pipeline_data_age_days": 6,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1015",
+      "display_name": "Isaac J.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 50,
+          "attainment_pct": 12.8,
+          "pace_vs_plan_pct": 29
+        }
+      },
+      "activity": {
+        "touches_7d": 0,
+        "touches_30d": 3,
+        "touches_prior_30d": 3,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 6,
+        "meetings_planned_30d": 8,
+        "tool_logins_30d": 16
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 177000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 1,
+          "proposal": 0,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.82,
+        "win_rate_pct_90d": 18,
+        "avg_cycle_days": 84
+      },
+      "production": {
+        "average_deal_size_usd": 34300,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 19
+      },
+      "book": {
+        "active_clients": 25,
+        "dormant_clients": 3,
+        "dormant_est_value_usd": 29000,
+        "whitespace_clients": 3,
+        "top3_client_share_pct": 70,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        }
+      },
+      "capability": {
+        "training_status": "overdue",
+        "feature_adoption_score": 47,
+        "last_coaching_days_ago": 34,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": null,
+        "disengagement_risk": null,
+        "opportunity_estimate_usd": null,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": null,
+          "INI-04": 60
+        },
+        "reason_codes": [
+          "Fewer than 14 days of data; scores suppressed"
+        ],
+        "confidence": "insufficient_data"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 12,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 6,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1016",
+      "display_name": "Fiona A.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 100,
+          "attainment_pct": 43.9,
+          "pace_vs_plan_pct": 101
+        }
+      },
+      "activity": {
+        "touches_7d": 6,
+        "touches_30d": 33,
+        "touches_prior_30d": 31,
+        "activity_trend": "flat",
+        "activity_change_pct": 6,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 12,
+        "meetings_planned_30d": 13,
+        "tool_logins_30d": null
+      },
+      "pipeline": {
+        "open_opportunities": 10,
+        "open_value_usd": 437000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 3,
+          "proposal": 1,
+          "decision": 5
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 1.33,
+        "win_rate_pct_90d": 41,
+        "avg_cycle_days": 34
+      },
+      "production": {
+        "average_deal_size_usd": 44200,
+        "offering_mix": {
+          "offering_a_pct": 26,
+          "offering_b_pct": 26,
+          "offering_c_pct": 48
+        },
+        "change_vs_prior_quarter_pct": 21
+      },
+      "book": {
+        "active_clients": 156,
+        "dormant_clients": 7,
+        "dormant_est_value_usd": 47000,
+        "whitespace_clients": 3,
+        "top3_client_share_pct": 44,
+        "clients_lost_12m": 0,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 5
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": null,
+        "feature_adoption_score": 58,
+        "last_coaching_days_ago": 47,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 15,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 70000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 68,
+          "INI-02": null,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "2 stalled opportunities",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 410,
+        "activity_data_age_days": 5,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "tool_logins_30d",
+          "training_status"
+        ]
+      }
+    },
+    {
+      "id": "TM-1017",
+      "display_name": "Luis L.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 60,
+          "attainment_pct": 21.5,
+          "pace_vs_plan_pct": 49
+        }
+      },
+      "activity": {
+        "touches_7d": 0,
+        "touches_30d": 2,
+        "touches_prior_30d": 2,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 6,
+        "meetings_held_30d": 12,
+        "meetings_planned_30d": 16,
+        "tool_logins_30d": 37
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 110000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 0,
+          "proposal": 0,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.53,
+        "win_rate_pct_90d": 27,
+        "avg_cycle_days": 73
+      },
+      "production": {
+        "average_deal_size_usd": 34000,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 11
+      },
+      "book": {
+        "active_clients": 14,
+        "dormant_clients": 0,
+        "dormant_est_value_usd": 0,
+        "whitespace_clients": 4,
+        "top3_client_share_pct": 91,
+        "clients_lost_12m": 1,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 9
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "assigned",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        }
+      },
+      "capability": {
+        "training_status": "overdue",
+        "feature_adoption_score": 55,
+        "last_coaching_days_ago": 10,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 26,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 50000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-04"
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": null,
+          "INI-04": 80
+        },
+        "reason_codes": [
+          "Pace at 49% of plan",
+          "Required training overdue"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 17,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1018",
+      "display_name": "Alina L.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 140,
+          "attainment_pct": 27.9,
+          "pace_vs_plan_pct": 64
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 19,
+        "touches_prior_30d": 22,
+        "activity_trend": "down",
+        "activity_change_pct": -14,
+        "days_since_last_activity": 8,
+        "meetings_held_30d": 15,
+        "meetings_planned_30d": 19,
+        "tool_logins_30d": 52
+      },
+      "pipeline": {
+        "open_opportunities": 4,
+        "open_value_usd": 334000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 0,
+          "proposal": 0,
+          "decision": 1
+        },
+        "stalled_opportunities": 3,
+        "pipeline_coverage_ratio": 0.6,
+        "win_rate_pct_90d": 16,
+        "avg_cycle_days": 63
+      },
+      "production": {
+        "average_deal_size_usd": 73600,
+        "offering_mix": {
+          "offering_a_pct": 65,
+          "offering_b_pct": 11,
+          "offering_c_pct": 24
+        },
+        "change_vs_prior_quarter_pct": -32
+      },
+      "book": {
+        "active_clients": 76,
+        "dormant_clients": 22,
+        "dormant_est_value_usd": 532000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 18,
+        "clients_lost_12m": 6,
+        "clients_at_risk": 3,
+        "upcoming_events_90d": 9
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "assigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "completed",
+          "progress": 4,
+          "target": 4,
+          "days_to_first_action": 9,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": null,
+        "feature_adoption_score": null,
+        "last_coaching_days_ago": 213,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 98,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 437000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 75,
+          "INI-02": 78,
+          "INI-03": 36,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "3 stalled opportunities",
+          "No logged activity in 8 days",
+          "Pace at 64% of plan"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 400,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 6,
+        "missing_fields": [
+          "feature_adoption_score",
+          "training_status"
+        ]
+      }
+    },
+    {
+      "id": "TM-1019",
+      "display_name": "Raj A.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 35.5,
+          "pace_vs_plan_pct": 82
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 9,
+        "touches_prior_30d": 15,
+        "activity_trend": "down",
+        "activity_change_pct": -40,
+        "days_since_last_activity": 12,
+        "meetings_held_30d": 6,
+        "meetings_planned_30d": 13,
+        "tool_logins_30d": 26
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 380000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 1,
+          "proposal": 1,
+          "decision": 0
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.35,
+        "win_rate_pct_90d": 16,
+        "avg_cycle_days": 32
+      },
+      "production": {
+        "average_deal_size_usd": 64400,
+        "offering_mix": {
+          "offering_a_pct": 51,
+          "offering_b_pct": 13,
+          "offering_c_pct": 36
+        },
+        "change_vs_prior_quarter_pct": -28
+      },
+      "book": {
+        "active_clients": 56,
+        "dormant_clients": 20,
+        "dormant_est_value_usd": 192000,
+        "whitespace_clients": 9,
+        "top3_client_share_pct": 49,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 5
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 1,
+          "target": 6,
+          "days_to_first_action": 12,
+          "historical_responsiveness": "low"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 7,
+          "target": 10,
+          "days_to_first_action": 0,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 1,
+          "target": 4,
+          "days_to_first_action": 9,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 28,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 70,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 412000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 66,
+          "INI-02": 81,
+          "INI-03": 67,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 40% vs. prior 30 days",
+          "No logged activity in 12 days",
+          "20 dormant clients (est. $192,000)"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 302,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 6,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1020",
+      "display_name": "Sam M.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 180,
+          "attainment_pct": 27.0,
+          "pace_vs_plan_pct": 62
+        }
+      },
+      "activity": {
+        "touches_7d": 8,
+        "touches_30d": 35,
+        "touches_prior_30d": 32,
+        "activity_trend": "flat",
+        "activity_change_pct": 9,
+        "days_since_last_activity": 8,
+        "meetings_held_30d": 16,
+        "meetings_planned_30d": 19,
+        "tool_logins_30d": 33
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 338000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 2,
+          "proposal": 0,
+          "decision": 2
+        },
+        "stalled_opportunities": 3,
+        "pipeline_coverage_ratio": 0.32,
+        "win_rate_pct_90d": 20,
+        "avg_cycle_days": 48
+      },
+      "production": {
+        "average_deal_size_usd": 79600,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": -32
+      },
+      "book": {
+        "active_clients": 54,
+        "dormant_clients": 20,
+        "dormant_est_value_usd": 482000,
+        "whitespace_clients": 11,
+        "top3_client_share_pct": 57,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 8
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 0,
+          "target": 4,
+          "days_to_first_action": 12,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 39,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 93,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 513000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 42,
+          "INI-02": 81,
+          "INI-03": 64,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "3 stalled opportunities",
+          "No logged activity in 8 days",
+          "Pace at 62% of plan"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 868,
+        "activity_data_age_days": 2,
+        "pipeline_data_age_days": 9,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1021",
+      "display_name": "Mei D.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 44.4,
+          "pace_vs_plan_pct": 102
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 26,
+        "touches_prior_30d": 24,
+        "activity_trend": "flat",
+        "activity_change_pct": 8,
+        "days_since_last_activity": 5,
+        "meetings_held_30d": 11,
+        "meetings_planned_30d": 14,
+        "tool_logins_30d": 18
+      },
+      "pipeline": {
+        "open_opportunities": 13,
+        "open_value_usd": 424000,
+        "stage_distribution": {
+          "prospect": 5,
+          "discovery": 4,
+          "proposal": 3,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.75,
+        "win_rate_pct_90d": 22,
+        "avg_cycle_days": 78
+      },
+      "production": {
+        "average_deal_size_usd": 49000,
+        "offering_mix": {
+          "offering_a_pct": 24,
+          "offering_b_pct": 12,
+          "offering_c_pct": 64
+        },
+        "change_vs_prior_quarter_pct": -24
+      },
+      "book": {
+        "active_clients": 160,
+        "dormant_clients": 9,
+        "dormant_est_value_usd": 92000,
+        "whitespace_clients": 29,
+        "top3_client_share_pct": 66,
+        "clients_lost_12m": 9,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 70,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 31,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 755000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-01"
+        },
+        "initiative_fit": {
+          "INI-01": 75,
+          "INI-02": null,
+          "INI-03": 80,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "29 clients with likely unmet needs"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 246,
+        "activity_data_age_days": 2,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1022",
+      "display_name": "Elena M.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 140,
+          "attainment_pct": 49.1,
+          "pace_vs_plan_pct": 113
+        }
+      },
+      "activity": {
+        "touches_7d": 6,
+        "touches_30d": 19,
+        "touches_prior_30d": 19,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 16,
+        "meetings_planned_30d": 19,
+        "tool_logins_30d": 25
+      },
+      "pipeline": {
+        "open_opportunities": 12,
+        "open_value_usd": 943000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 3,
+          "proposal": 3,
+          "decision": 3
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 1.11,
+        "win_rate_pct_90d": 38,
+        "avg_cycle_days": 94
+      },
+      "production": {
+        "average_deal_size_usd": 80000,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 22
+      },
+      "book": {
+        "active_clients": 84,
+        "dormant_clients": 20,
+        "dormant_est_value_usd": 435000,
+        "whitespace_clients": 6,
+        "top3_client_share_pct": 66,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 4
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 3,
+          "target": 4,
+          "days_to_first_action": 1,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 95,
+        "last_coaching_days_ago": 155,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 35,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 409000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 61,
+          "INI-02": 88,
+          "INI-03": 62,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "20 dormant clients (est. $435,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 192,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1023",
+      "display_name": "Dmitri H.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 29.4,
+          "pace_vs_plan_pct": 68
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 16,
+        "touches_prior_30d": 33,
+        "activity_trend": "down",
+        "activity_change_pct": -52,
+        "days_since_last_activity": 21,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 2
+      },
+      "pipeline": {
+        "open_opportunities": 9,
+        "open_value_usd": 332000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 4,
+          "proposal": 1,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.36,
+        "win_rate_pct_90d": 23,
+        "avg_cycle_days": 38
+      },
+      "production": {
+        "average_deal_size_usd": 49400,
+        "offering_mix": {
+          "offering_a_pct": 39,
+          "offering_b_pct": 21,
+          "offering_c_pct": 40
+        },
+        "change_vs_prior_quarter_pct": 9
+      },
+      "book": {
+        "active_clients": 58,
+        "dormant_clients": 5,
+        "dormant_est_value_usd": 61000,
+        "whitespace_clients": 10,
+        "top3_client_share_pct": 39,
+        "clients_lost_12m": 5,
+        "clients_at_risk": 8,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 3,
+          "target": 4,
+          "days_to_first_action": 0,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": null,
+        "last_coaching_days_ago": 6,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 70,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 265000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 68,
+          "INI-02": null,
+          "INI-03": 44,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 52% vs. prior 30 days",
+          "No logged activity in 21 days",
+          "Pace at 68% of plan"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 235,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "feature_adoption_score"
+        ]
+      }
+    },
+    {
+      "id": "TM-1024",
+      "display_name": "Imani N.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Southwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 60,
+          "attainment_pct": 25.8,
+          "pace_vs_plan_pct": 59
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 10,
+        "touches_prior_30d": 6,
+        "activity_trend": "up",
+        "activity_change_pct": 67,
+        "days_since_last_activity": 6,
+        "meetings_held_30d": 6,
+        "meetings_planned_30d": 9,
+        "tool_logins_30d": 17
+      },
+      "pipeline": {
+        "open_opportunities": 3,
+        "open_value_usd": 52000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 0,
+          "proposal": 0,
+          "decision": 2
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.35,
+        "win_rate_pct_90d": null,
+        "avg_cycle_days": null
+      },
+      "production": {
+        "average_deal_size_usd": 21100,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": -3
+      },
+      "book": {
+        "active_clients": 9,
+        "dormant_clients": 1,
+        "dormant_est_value_usd": 3000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 66,
+        "clients_lost_12m": 1,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 56,
+        "last_coaching_days_ago": 36,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": null,
+        "disengagement_risk": null,
+        "opportunity_estimate_usd": null,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": 55,
+          "INI-04": 66
+        },
+        "reason_codes": [
+          "Fewer than 14 days of data; scores suppressed"
+        ],
+        "confidence": "insufficient_data"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 10,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "offering_mix",
+          "win_rate_pct",
+          "avg_cycle_days"
+        ]
+      }
+    },
+    {
+      "id": "TM-1025",
+      "display_name": "Diego G.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "1-3 yrs",
+        "territory": "Northeast",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 50,
+          "attainment_pct": 33.2,
+          "pace_vs_plan_pct": 76
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 10,
+        "touches_prior_30d": 20,
+        "activity_trend": "down",
+        "activity_change_pct": -50,
+        "days_since_last_activity": 7,
+        "meetings_held_30d": 3,
+        "meetings_planned_30d": 6,
+        "tool_logins_30d": 28
+      },
+      "pipeline": {
+        "open_opportunities": 13,
+        "open_value_usd": 285000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 3,
+          "proposal": 5,
+          "decision": 2
+        },
+        "stalled_opportunities": 4,
+        "pipeline_coverage_ratio": 0.64,
+        "win_rate_pct_90d": 20,
+        "avg_cycle_days": 28
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 60,
+          "offering_b_pct": 29,
+          "offering_c_pct": 11
+        },
+        "change_vs_prior_quarter_pct": 17
+      },
+      "book": {
+        "active_clients": 141,
+        "dormant_clients": 24,
+        "dormant_est_value_usd": 190000,
+        "whitespace_clients": 16,
+        "top3_client_share_pct": 18,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 38,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 82,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 254000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 45,
+          "INI-02": 80,
+          "INI-03": 96,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 50% vs. prior 30 days",
+          "4 stalled opportunities",
+          "16 clients with likely unmet needs"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 709,
+        "activity_data_age_days": 2,
+        "pipeline_data_age_days": 3,
+        "missing_fields": [
+          "average_deal_size_usd"
+        ]
+      }
+    },
+    {
+      "id": "TM-1026",
+      "display_name": "Tessa B.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "Southwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 100,
+          "attainment_pct": 40.0,
+          "pace_vs_plan_pct": 92
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 17,
+        "touches_prior_30d": 16,
+        "activity_trend": "flat",
+        "activity_change_pct": 6,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 12,
+        "meetings_planned_30d": 15,
+        "tool_logins_30d": 41
+      },
+      "pipeline": {
+        "open_opportunities": 8,
+        "open_value_usd": 369000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 1,
+          "proposal": 3,
+          "decision": 2
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.6,
+        "win_rate_pct_90d": 31,
+        "avg_cycle_days": 83
+      },
+      "production": {
+        "average_deal_size_usd": 44700,
+        "offering_mix": {
+          "offering_a_pct": 48,
+          "offering_b_pct": 34,
+          "offering_c_pct": 18
+        },
+        "change_vs_prior_quarter_pct": 1
+      },
+      "book": {
+        "active_clients": 137,
+        "dormant_clients": 21,
+        "dormant_est_value_usd": 259000,
+        "whitespace_clients": 22,
+        "top3_client_share_pct": 23,
+        "clients_lost_12m": 5,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": null,
+        "last_coaching_days_ago": 196,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 45,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 383000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-03"
+        },
+        "initiative_fit": {
+          "INI-01": 91,
+          "INI-02": 95,
+          "INI-03": 92,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "22 clients with likely unmet needs",
+          "21 dormant clients (est. $259,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 490,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "feature_adoption_score"
+        ]
+      }
+    },
+    {
+      "id": "TM-1027",
+      "display_name": "Kwame C.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "West",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 140,
+          "attainment_pct": 33.9,
+          "pace_vs_plan_pct": 78
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 10,
+        "touches_prior_30d": 22,
+        "activity_trend": "down",
+        "activity_change_pct": -55,
+        "days_since_last_activity": 8,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 12,
+        "tool_logins_30d": 10
+      },
+      "pipeline": {
+        "open_opportunities": 10,
+        "open_value_usd": 732000,
+        "stage_distribution": {
+          "prospect": 5,
+          "discovery": 1,
+          "proposal": 1,
+          "decision": 3
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.39,
+        "win_rate_pct_90d": 18,
+        "avg_cycle_days": 79
+      },
+      "production": {
+        "average_deal_size_usd": 109900,
+        "offering_mix": {
+          "offering_a_pct": 32,
+          "offering_b_pct": 56,
+          "offering_c_pct": 12
+        },
+        "change_vs_prior_quarter_pct": -32
+      },
+      "book": {
+        "active_clients": 140,
+        "dormant_clients": 21,
+        "dormant_est_value_usd": 243000,
+        "whitespace_clients": 4,
+        "top3_client_share_pct": 47,
+        "clients_lost_12m": 9,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "assigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 56,
+        "last_coaching_days_ago": 30,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 71,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 346000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 79,
+          "INI-02": 91,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 55% vs. prior 30 days",
+          "No logged activity in 8 days",
+          "21 dormant clients (est. $243,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 507,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1028",
+      "display_name": "Paloma T.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Midwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 170,
+          "attainment_pct": 30.0,
+          "pace_vs_plan_pct": 69
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 9,
+        "touches_prior_30d": 20,
+        "activity_trend": "down",
+        "activity_change_pct": -55,
+        "days_since_last_activity": 14,
+        "meetings_held_30d": 5,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 4
+      },
+      "pipeline": {
+        "open_opportunities": 13,
+        "open_value_usd": 584000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 4,
+          "proposal": 3,
+          "decision": 4
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.43,
+        "win_rate_pct_90d": 17,
+        "avg_cycle_days": 92
+      },
+      "production": {
+        "average_deal_size_usd": 63900,
+        "offering_mix": {
+          "offering_a_pct": 43,
+          "offering_b_pct": 18,
+          "offering_c_pct": 39
+        },
+        "change_vs_prior_quarter_pct": 21
+      },
+      "book": {
+        "active_clients": 102,
+        "dormant_clients": 10,
+        "dormant_est_value_usd": 86000,
+        "whitespace_clients": 3,
+        "top3_client_share_pct": 35,
+        "clients_lost_12m": 7,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 4
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": null,
+        "feature_adoption_score": null,
+        "last_coaching_days_ago": 37,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 66,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 151000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 95,
+          "INI-02": 84,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 55% vs. prior 30 days",
+          "No logged activity in 14 days",
+          "Pace at 69% of plan"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 336,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": [
+          "feature_adoption_score",
+          "training_status"
+        ]
+      }
+    },
+    {
+      "id": "TM-1029",
+      "display_name": "Jamal R.",
+      "profile": {
+        "segment": "Veteran",
+        "tenure_band": "7+ yrs",
+        "territory": "Southwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 31.0,
+          "pace_vs_plan_pct": 71
+        }
+      },
+      "activity": {
+        "touches_7d": 6,
+        "touches_30d": 19,
+        "touches_prior_30d": 28,
+        "activity_trend": "down",
+        "activity_change_pct": -32,
+        "days_since_last_activity": 9,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 8,
+        "tool_logins_30d": 28
+      },
+      "pipeline": {
+        "open_opportunities": 7,
+        "open_value_usd": 325000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 1,
+          "proposal": 2,
+          "decision": 1
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 0.34,
+        "win_rate_pct_90d": 19,
+        "avg_cycle_days": 65
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 42,
+          "offering_b_pct": 47,
+          "offering_c_pct": 11
+        },
+        "change_vs_prior_quarter_pct": 17
+      },
+      "book": {
+        "active_clients": 52,
+        "dormant_clients": 19,
+        "dormant_est_value_usd": 255000,
+        "whitespace_clients": 4,
+        "top3_client_share_pct": 37,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 7,
+        "upcoming_events_90d": 5
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 2,
+          "target": 6,
+          "days_to_first_action": 8,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 9,
+          "target": 10,
+          "days_to_first_action": 14,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 65,
+        "last_coaching_days_ago": 129,
+        "last_coaching_topic": "Goal planning"
+      },
+      "ai": {
+        "priority_score": 75,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 207000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 36,
+          "INI-02": 89,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 32% vs. prior 30 days",
+          "2 stalled opportunities",
+          "No logged activity in 9 days"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 191,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "average_deal_size_usd"
+        ]
+      }
+    },
+    {
+      "id": "TM-1030",
+      "display_name": "Hannah S.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southwest",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 37.7,
+          "pace_vs_plan_pct": 87
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 15,
+        "touches_prior_30d": 34,
+        "activity_trend": "down",
+        "activity_change_pct": -56,
+        "days_since_last_activity": 18,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 17,
+        "tool_logins_30d": 7
+      },
+      "pipeline": {
+        "open_opportunities": 6,
+        "open_value_usd": 236000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 1,
+          "proposal": 4,
+          "decision": 0
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 0.36,
+        "win_rate_pct_90d": 14,
+        "avg_cycle_days": 71
+      },
+      "production": {
+        "average_deal_size_usd": 48900,
+        "offering_mix": {
+          "offering_a_pct": 33,
+          "offering_b_pct": 10,
+          "offering_c_pct": 57
+        },
+        "change_vs_prior_quarter_pct": -3
+      },
+      "book": {
+        "active_clients": 53,
+        "dormant_clients": 18,
+        "dormant_est_value_usd": 169000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 33,
+        "clients_lost_12m": 6,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "assigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 56,
+        "last_coaching_days_ago": 28,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 85,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 198000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 63,
+          "INI-02": 82,
+          "INI-03": 90,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 56% vs. prior 30 days",
+          "2 stalled opportunities",
+          "No logged activity in 18 days"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 395,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1031",
+      "display_name": "Sofia A.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "Northeast",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 100,
+          "attainment_pct": 34.2,
+          "pace_vs_plan_pct": 79
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 7,
+        "touches_prior_30d": 15,
+        "activity_trend": "down",
+        "activity_change_pct": -53,
+        "days_since_last_activity": 12,
+        "meetings_held_30d": 5,
+        "meetings_planned_30d": 11,
+        "tool_logins_30d": 24
+      },
+      "pipeline": {
+        "open_opportunities": 7,
+        "open_value_usd": 367000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 4,
+          "proposal": 1,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.75,
+        "win_rate_pct_90d": 13,
+        "avg_cycle_days": 63
+      },
+      "production": {
+        "average_deal_size_usd": 50600,
+        "offering_mix": {
+          "offering_a_pct": 53,
+          "offering_b_pct": 42,
+          "offering_c_pct": 5
+        },
+        "change_vs_prior_quarter_pct": 14
+      },
+      "book": {
+        "active_clients": 61,
+        "dormant_clients": 7,
+        "dormant_est_value_usd": 39000,
+        "whitespace_clients": 13,
+        "top3_client_share_pct": 43,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "overdue",
+        "feature_adoption_score": 40,
+        "last_coaching_days_ago": 9,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 57,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 299000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 69,
+          "INI-02": null,
+          "INI-03": 84,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 53% vs. prior 30 days",
+          "No logged activity in 12 days",
+          "Required training overdue"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 816,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1032",
+      "display_name": "Ethan G.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "West",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 150,
+          "attainment_pct": 27.4,
+          "pace_vs_plan_pct": 63
+        }
+      },
+      "activity": {
+        "touches_7d": 11,
+        "touches_30d": 35,
+        "touches_prior_30d": 33,
+        "activity_trend": "flat",
+        "activity_change_pct": 6,
+        "days_since_last_activity": 4,
+        "meetings_held_30d": 5,
+        "meetings_planned_30d": 7,
+        "tool_logins_30d": 36
+      },
+      "pipeline": {
+        "open_opportunities": 11,
+        "open_value_usd": 939000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 3,
+          "proposal": 2,
+          "decision": 2
+        },
+        "stalled_opportunities": 7,
+        "pipeline_coverage_ratio": 0.33,
+        "win_rate_pct_90d": 16,
+        "avg_cycle_days": 86
+      },
+      "production": {
+        "average_deal_size_usd": 109000,
+        "offering_mix": {
+          "offering_a_pct": 31,
+          "offering_b_pct": 13,
+          "offering_c_pct": 56
+        },
+        "change_vs_prior_quarter_pct": -12
+      },
+      "book": {
+        "active_clients": 121,
+        "dormant_clients": 21,
+        "dormant_est_value_usd": 371000,
+        "whitespace_clients": 9,
+        "top3_client_share_pct": 35,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 4
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 5,
+          "target": 6,
+          "days_to_first_action": 13,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "completed",
+          "progress": 10,
+          "target": 10,
+          "days_to_first_action": 12,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": null,
+        "feature_adoption_score": 49,
+        "last_coaching_days_ago": 102,
+        "last_coaching_topic": "Goal planning"
+      },
+      "ai": {
+        "priority_score": 96,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 559000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 35,
+          "INI-02": 87,
+          "INI-03": 71,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "7 stalled opportunities",
+          "Pace at 63% of plan",
+          "21 dormant clients (est. $371,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 624,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": [
+          "training_status"
+        ]
+      }
+    },
+    {
+      "id": "TM-1033",
+      "display_name": "Quinn G.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "West",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 50,
+          "attainment_pct": 17.1,
+          "pace_vs_plan_pct": 39
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 13,
+        "touches_prior_30d": 10,
+        "activity_trend": "up",
+        "activity_change_pct": 30,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 9,
+        "tool_logins_30d": 22
+      },
+      "pipeline": {
+        "open_opportunities": 3,
+        "open_value_usd": 61000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 1,
+          "proposal": 1,
+          "decision": 0
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.61,
+        "win_rate_pct_90d": 27,
+        "avg_cycle_days": 35
+      },
+      "production": {
+        "average_deal_size_usd": 25500,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": -27
+      },
+      "book": {
+        "active_clients": 13,
+        "dormant_clients": 3,
+        "dormant_est_value_usd": 12000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 79,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "completed",
+          "progress": 4,
+          "target": 4,
+          "days_to_first_action": 0,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "accepted",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 56,
+        "last_coaching_days_ago": 175,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 30,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 53000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": 59,
+          "INI-04": 91
+        },
+        "reason_codes": [
+          "Pace at 39% of plan"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 26,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 3,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1034",
+      "display_name": "Terrence K.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 44.4,
+          "pace_vs_plan_pct": 102
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 13,
+        "touches_prior_30d": 15,
+        "activity_trend": "down",
+        "activity_change_pct": -13,
+        "days_since_last_activity": 3,
+        "meetings_held_30d": 13,
+        "meetings_planned_30d": 18,
+        "tool_logins_30d": 43
+      },
+      "pipeline": {
+        "open_opportunities": 8,
+        "open_value_usd": 429000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 2,
+          "proposal": 2,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.78,
+        "win_rate_pct_90d": 33,
+        "avg_cycle_days": 42
+      },
+      "production": {
+        "average_deal_size_usd": 45700,
+        "offering_mix": {
+          "offering_a_pct": 28,
+          "offering_b_pct": 18,
+          "offering_c_pct": 54
+        },
+        "change_vs_prior_quarter_pct": 13
+      },
+      "book": {
+        "active_clients": 65,
+        "dormant_clients": 23,
+        "dormant_est_value_usd": 194000,
+        "whitespace_clients": 22,
+        "top3_client_share_pct": 54,
+        "clients_lost_12m": 9,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 5,
+          "target": 6,
+          "days_to_first_action": 0,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 7,
+          "target": 10,
+          "days_to_first_action": 4,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 66,
+        "last_coaching_days_ago": 103,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 50,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 604000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-03"
+        },
+        "initiative_fit": {
+          "INI-01": 76,
+          "INI-02": 78,
+          "INI-03": 88,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "22 clients with likely unmet needs",
+          "23 dormant clients (est. $194,000)"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 292,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 14,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1035",
+      "display_name": "Vera L.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 180,
+          "attainment_pct": 53.5,
+          "pace_vs_plan_pct": 123
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 33,
+        "touches_prior_30d": 27,
+        "activity_trend": "up",
+        "activity_change_pct": 22,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 11,
+        "meetings_planned_30d": 12,
+        "tool_logins_30d": 60
+      },
+      "pipeline": {
+        "open_opportunities": 10,
+        "open_value_usd": 705000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 2,
+          "proposal": 3,
+          "decision": 3
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 1.24,
+        "win_rate_pct_90d": 29,
+        "avg_cycle_days": 32
+      },
+      "production": {
+        "average_deal_size_usd": 109100,
+        "offering_mix": {
+          "offering_a_pct": 22,
+          "offering_b_pct": 44,
+          "offering_c_pct": 34
+        },
+        "change_vs_prior_quarter_pct": 12
+      },
+      "book": {
+        "active_clients": 103,
+        "dormant_clients": 19,
+        "dormant_est_value_usd": 488000,
+        "whitespace_clients": 2,
+        "top3_client_share_pct": 24,
+        "clients_lost_12m": 0,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 3
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 82,
+        "last_coaching_days_ago": 125,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 35,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 289000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 87,
+          "INI-02": 84,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "19 dormant clients (est. $488,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 256,
+        "activity_data_age_days": 2,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1036",
+      "display_name": "Reid D.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "West",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 100,
+          "attainment_pct": 32.5,
+          "pace_vs_plan_pct": 75
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 19,
+        "touches_prior_30d": 23,
+        "activity_trend": "down",
+        "activity_change_pct": -17,
+        "days_since_last_activity": 5,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 8,
+        "tool_logins_30d": 22
+      },
+      "pipeline": {
+        "open_opportunities": 9,
+        "open_value_usd": 697000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 4,
+          "proposal": 1,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.4,
+        "win_rate_pct_90d": 24,
+        "avg_cycle_days": 80
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 31,
+          "offering_b_pct": 28,
+          "offering_c_pct": 41
+        },
+        "change_vs_prior_quarter_pct": -28
+      },
+      "book": {
+        "active_clients": 47,
+        "dormant_clients": 11,
+        "dormant_est_value_usd": 124000,
+        "whitespace_clients": 13,
+        "top3_client_share_pct": 66,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 3
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "completed",
+          "progress": 10,
+          "target": 10,
+          "days_to_first_action": 11,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 52,
+        "last_coaching_days_ago": 222,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 46,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 386000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 42,
+          "INI-02": 91,
+          "INI-03": 52,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 17% vs. prior 30 days"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 292,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 6,
+        "missing_fields": [
+          "average_deal_size_usd"
+        ]
+      }
+    },
+    {
+      "id": "TM-1037",
+      "display_name": "Cameron H.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "Northeast",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 35.9,
+          "pace_vs_plan_pct": 83
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 15,
+        "touches_prior_30d": 18,
+        "activity_trend": "down",
+        "activity_change_pct": -17,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 13,
+        "meetings_planned_30d": 15,
+        "tool_logins_30d": null
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 323000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 0,
+          "proposal": 1,
+          "decision": 3
+        },
+        "stalled_opportunities": 5,
+        "pipeline_coverage_ratio": 0.48,
+        "win_rate_pct_90d": 20,
+        "avg_cycle_days": 41
+      },
+      "production": {
+        "average_deal_size_usd": 60400,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 16
+      },
+      "book": {
+        "active_clients": 157,
+        "dormant_clients": 7,
+        "dormant_est_value_usd": 137000,
+        "whitespace_clients": 16,
+        "top3_client_share_pct": 40,
+        "clients_lost_12m": 7,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 2,
+          "target": 4,
+          "days_to_first_action": 3,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 32,
+        "last_coaching_days_ago": 100,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 64,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 403000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 51,
+          "INI-02": null,
+          "INI-03": 88,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 17% vs. prior 30 days",
+          "5 stalled opportunities",
+          "16 clients with likely unmet needs"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 189,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": [
+          "tool_logins_30d",
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1038",
+      "display_name": "Chloe V.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "7+ yrs",
+        "territory": "Northeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 140,
+          "attainment_pct": 59.4,
+          "pace_vs_plan_pct": 137
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 17,
+        "touches_prior_30d": 14,
+        "activity_trend": "up",
+        "activity_change_pct": 21,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 17,
+        "meetings_planned_30d": 20,
+        "tool_logins_30d": 14
+      },
+      "pipeline": {
+        "open_opportunities": 7,
+        "open_value_usd": 542000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 2,
+          "proposal": 1,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 1.38,
+        "win_rate_pct_90d": 32,
+        "avg_cycle_days": 86
+      },
+      "production": {
+        "average_deal_size_usd": 92300,
+        "offering_mix": {
+          "offering_a_pct": 37,
+          "offering_b_pct": 33,
+          "offering_c_pct": 30
+        },
+        "change_vs_prior_quarter_pct": 2
+      },
+      "book": {
+        "active_clients": 49,
+        "dormant_clients": 7,
+        "dormant_est_value_usd": 68000,
+        "whitespace_clients": 15,
+        "top3_client_share_pct": 20,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 0,
+        "upcoming_events_90d": 0
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 86,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 14,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 546000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-03"
+        },
+        "initiative_fit": {
+          "INI-01": 80,
+          "INI-02": null,
+          "INI-03": 82,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "15 clients with likely unmet needs",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 854,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 14,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1039",
+      "display_name": "Arjun G.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 28.1,
+          "pace_vs_plan_pct": 65
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 27,
+        "touches_prior_30d": 34,
+        "activity_trend": "down",
+        "activity_change_pct": -21,
+        "days_since_last_activity": 5,
+        "meetings_held_30d": 8,
+        "meetings_planned_30d": 16,
+        "tool_logins_30d": 28
+      },
+      "pipeline": {
+        "open_opportunities": 8,
+        "open_value_usd": 515000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 0,
+          "proposal": 2,
+          "decision": 2
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.43,
+        "win_rate_pct_90d": 17,
+        "avg_cycle_days": 82
+      },
+      "production": {
+        "average_deal_size_usd": 55200,
+        "offering_mix": {
+          "offering_a_pct": 22,
+          "offering_b_pct": 34,
+          "offering_c_pct": 44
+        },
+        "change_vs_prior_quarter_pct": -25
+      },
+      "book": {
+        "active_clients": 139,
+        "dormant_clients": 23,
+        "dormant_est_value_usd": 230000,
+        "whitespace_clients": 7,
+        "top3_client_share_pct": 21,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 4,
+        "upcoming_events_90d": 0
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 29,
+        "last_coaching_days_ago": 188,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 59,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 287000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 81,
+          "INI-02": 93,
+          "INI-03": 56,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 21% vs. prior 30 days",
+          "Pace at 65% of plan",
+          "23 dormant clients (est. $230,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 339,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1040",
+      "display_name": "Tomas E.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 160,
+          "attainment_pct": 48.8,
+          "pace_vs_plan_pct": 112
+        }
+      },
+      "activity": {
+        "touches_7d": 8,
+        "touches_30d": 32,
+        "touches_prior_30d": 27,
+        "activity_trend": "up",
+        "activity_change_pct": 19,
+        "days_since_last_activity": 3,
+        "meetings_held_30d": 9,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 57
+      },
+      "pipeline": {
+        "open_opportunities": 11,
+        "open_value_usd": 527000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 4,
+          "proposal": 3,
+          "decision": 0
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 1.46,
+        "win_rate_pct_90d": 34,
+        "avg_cycle_days": 39
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 36,
+          "offering_b_pct": 20,
+          "offering_c_pct": 44
+        },
+        "change_vs_prior_quarter_pct": 11
+      },
+      "book": {
+        "active_clients": 156,
+        "dormant_clients": 17,
+        "dormant_est_value_usd": 258000,
+        "whitespace_clients": 15,
+        "top3_client_share_pct": 36,
+        "clients_lost_12m": 1,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 5
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 1,
+          "target": 6,
+          "days_to_first_action": 3,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": null,
+        "feature_adoption_score": 71,
+        "last_coaching_days_ago": 180,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 29,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 553000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 42,
+          "INI-02": 94,
+          "INI-03": 95,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "2 stalled opportunities",
+          "15 clients with likely unmet needs",
+          "17 dormant clients (est. $258,000)"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 491,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 1,
+        "missing_fields": [
+          "average_deal_size_usd",
+          "training_status"
+        ]
+      }
+    },
+    {
+      "id": "TM-1041",
+      "display_name": "Bridget L.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "7+ yrs",
+        "territory": "Midwest",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 170,
+          "attainment_pct": 60.8,
+          "pace_vs_plan_pct": 140
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 22,
+        "touches_prior_30d": 18,
+        "activity_trend": "up",
+        "activity_change_pct": 22,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 8,
+        "tool_logins_30d": null
+      },
+      "pipeline": {
+        "open_opportunities": 13,
+        "open_value_usd": 862000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 4,
+          "proposal": 6,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 1.04,
+        "win_rate_pct_90d": 41,
+        "avg_cycle_days": 81
+      },
+      "production": {
+        "average_deal_size_usd": 109300,
+        "offering_mix": {
+          "offering_a_pct": 56,
+          "offering_b_pct": 35,
+          "offering_c_pct": 9
+        },
+        "change_vs_prior_quarter_pct": 23
+      },
+      "book": {
+        "active_clients": 67,
+        "dormant_clients": 24,
+        "dormant_est_value_usd": 537000,
+        "whitespace_clients": 16,
+        "top3_client_share_pct": 35,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 2,
+          "target": 6,
+          "days_to_first_action": 8,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 4,
+          "target": 10,
+          "days_to_first_action": 11,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 90,
+        "last_coaching_days_ago": 129,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 41,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 1133000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-03"
+        },
+        "initiative_fit": {
+          "INI-01": 86,
+          "INI-02": 90,
+          "INI-03": 92,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "16 clients with likely unmet needs",
+          "24 dormant clients (est. $537,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 393,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": [
+          "tool_logins_30d"
+        ]
+      }
+    },
+    {
+      "id": "TM-1042",
+      "display_name": "Priya P.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 180,
+          "attainment_pct": 22.8,
+          "pace_vs_plan_pct": 52
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 11,
+        "touches_prior_30d": 23,
+        "activity_trend": "down",
+        "activity_change_pct": -52,
+        "days_since_last_activity": 17,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 12,
+        "tool_logins_30d": 15
+      },
+      "pipeline": {
+        "open_opportunities": 14,
+        "open_value_usd": 994000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 4,
+          "proposal": 3,
+          "decision": 3
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.37,
+        "win_rate_pct_90d": 16,
+        "avg_cycle_days": 69
+      },
+      "production": {
+        "average_deal_size_usd": 73200,
+        "offering_mix": {
+          "offering_a_pct": 43,
+          "offering_b_pct": 30,
+          "offering_c_pct": 27
+        },
+        "change_vs_prior_quarter_pct": -17
+      },
+      "book": {
+        "active_clients": 160,
+        "dormant_clients": 20,
+        "dormant_est_value_usd": 288000,
+        "whitespace_clients": 9,
+        "top3_client_share_pct": 55,
+        "clients_lost_12m": 8,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 53,
+        "last_coaching_days_ago": 122,
+        "last_coaching_topic": "Goal planning"
+      },
+      "ai": {
+        "priority_score": 88,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 442000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 69,
+          "INI-02": 82,
+          "INI-03": 86,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 52% vs. prior 30 days",
+          "No logged activity in 17 days",
+          "Pace at 52% of plan"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 584,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 6,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1043",
+      "display_name": "Colin F.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 35.2,
+          "pace_vs_plan_pct": 81
+        }
+      },
+      "activity": {
+        "touches_7d": 6,
+        "touches_30d": 25,
+        "touches_prior_30d": 29,
+        "activity_trend": "down",
+        "activity_change_pct": -14,
+        "days_since_last_activity": 16,
+        "meetings_held_30d": 9,
+        "meetings_planned_30d": 16,
+        "tool_logins_30d": 23
+      },
+      "pipeline": {
+        "open_opportunities": 8,
+        "open_value_usd": 438000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 3,
+          "proposal": 1,
+          "decision": 2
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.77,
+        "win_rate_pct_90d": 22,
+        "avg_cycle_days": 82
+      },
+      "production": {
+        "average_deal_size_usd": 52100,
+        "offering_mix": {
+          "offering_a_pct": 37,
+          "offering_b_pct": 39,
+          "offering_c_pct": 24
+        },
+        "change_vs_prior_quarter_pct": -18
+      },
+      "book": {
+        "active_clients": 100,
+        "dormant_clients": 10,
+        "dormant_est_value_usd": 130000,
+        "whitespace_clients": 11,
+        "top3_client_share_pct": 64,
+        "clients_lost_12m": 7,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 0,
+          "target": 6,
+          "days_to_first_action": 9,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 41,
+        "last_coaching_days_ago": 169,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 54,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 246000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 74,
+          "INI-02": 69,
+          "INI-03": 59,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "No logged activity in 16 days"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 453,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1044",
+      "display_name": "Anika B.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 180,
+          "attainment_pct": 58.2,
+          "pace_vs_plan_pct": 134
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 33,
+        "touches_prior_30d": 30,
+        "activity_trend": "flat",
+        "activity_change_pct": 10,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 8,
+        "meetings_planned_30d": 9,
+        "tool_logins_30d": 43
+      },
+      "pipeline": {
+        "open_opportunities": 4,
+        "open_value_usd": 290000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 0,
+          "proposal": 2,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.81,
+        "win_rate_pct_90d": 31,
+        "avg_cycle_days": 61
+      },
+      "production": {
+        "average_deal_size_usd": 80400,
+        "offering_mix": {
+          "offering_a_pct": 34,
+          "offering_b_pct": 46,
+          "offering_c_pct": 20
+        },
+        "change_vs_prior_quarter_pct": 24
+      },
+      "book": {
+        "active_clients": 113,
+        "dormant_clients": 20,
+        "dormant_est_value_usd": 438000,
+        "whitespace_clients": 8,
+        "top3_client_share_pct": 51,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 0
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 85,
+        "last_coaching_days_ago": 39,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 34,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 552000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 48,
+          "INI-02": 80,
+          "INI-03": 66,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "20 dormant clients (est. $438,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 360,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 3,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1045",
+      "display_name": "Samir W.",
+      "profile": {
+        "segment": "Veteran",
+        "tenure_band": "7+ yrs",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 130,
+          "attainment_pct": 34.0,
+          "pace_vs_plan_pct": 78
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 18,
+        "touches_prior_30d": 22,
+        "activity_trend": "down",
+        "activity_change_pct": -18,
+        "days_since_last_activity": 14,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 7,
+        "tool_logins_30d": 23
+      },
+      "pipeline": {
+        "open_opportunities": 6,
+        "open_value_usd": 272000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 2,
+          "proposal": 1,
+          "decision": 0
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.34,
+        "win_rate_pct_90d": 18,
+        "avg_cycle_days": 65
+      },
+      "production": {
+        "average_deal_size_usd": 73600,
+        "offering_mix": {
+          "offering_a_pct": 36,
+          "offering_b_pct": 42,
+          "offering_c_pct": 22
+        },
+        "change_vs_prior_quarter_pct": 6
+      },
+      "book": {
+        "active_clients": 57,
+        "dormant_clients": 21,
+        "dormant_est_value_usd": 222000,
+        "whitespace_clients": 2,
+        "top3_client_share_pct": 62,
+        "clients_lost_12m": 6,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 2,
+          "target": 10,
+          "days_to_first_action": 1,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 43,
+        "last_coaching_days_ago": 214,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 63,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 162000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 62,
+          "INI-02": 95,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 18% vs. prior 30 days",
+          "No logged activity in 14 days",
+          "21 dormant clients (est. $222,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 498,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1046",
+      "display_name": "Hiro E.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Midwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 36.0,
+          "pace_vs_plan_pct": 83
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 30,
+        "touches_prior_30d": 34,
+        "activity_trend": "down",
+        "activity_change_pct": -12,
+        "days_since_last_activity": 6,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 19
+      },
+      "pipeline": {
+        "open_opportunities": 8,
+        "open_value_usd": 301000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 2,
+          "proposal": 2,
+          "decision": 2
+        },
+        "stalled_opportunities": 8,
+        "pipeline_coverage_ratio": 0.65,
+        "win_rate_pct_90d": 23,
+        "avg_cycle_days": 52
+      },
+      "production": {
+        "average_deal_size_usd": 56500,
+        "offering_mix": {
+          "offering_a_pct": 42,
+          "offering_b_pct": 26,
+          "offering_c_pct": 32
+        },
+        "change_vs_prior_quarter_pct": 15
+      },
+      "book": {
+        "active_clients": 95,
+        "dormant_clients": 13,
+        "dormant_est_value_usd": 219000,
+        "whitespace_clients": 10,
+        "top3_client_share_pct": 29,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 3,
+        "upcoming_events_90d": 2
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 5,
+          "target": 6,
+          "days_to_first_action": 5,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 49,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 91,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 337000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 69,
+          "INI-02": 85,
+          "INI-03": 73,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "8 stalled opportunities",
+          "13 dormant clients (est. $219,000)"
+        ],
+        "confidence": "medium"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 291,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 6,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1047",
+      "display_name": "Joon A.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 170,
+          "attainment_pct": 36.5,
+          "pace_vs_plan_pct": 84
+        }
+      },
+      "activity": {
+        "touches_7d": 7,
+        "touches_30d": 25,
+        "touches_prior_30d": 27,
+        "activity_trend": "flat",
+        "activity_change_pct": -7,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 9,
+        "meetings_planned_30d": 12,
+        "tool_logins_30d": 38
+      },
+      "pipeline": {
+        "open_opportunities": 5,
+        "open_value_usd": 391000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 1,
+          "proposal": 2,
+          "decision": 0
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.37,
+        "win_rate_pct_90d": 25,
+        "avg_cycle_days": 81
+      },
+      "production": {
+        "average_deal_size_usd": 84000,
+        "offering_mix": {
+          "offering_a_pct": 55,
+          "offering_b_pct": 22,
+          "offering_c_pct": 23
+        },
+        "change_vs_prior_quarter_pct": -19
+      },
+      "book": {
+        "active_clients": 131,
+        "dormant_clients": 11,
+        "dormant_est_value_usd": 266000,
+        "whitespace_clients": 24,
+        "top3_client_share_pct": 66,
+        "clients_lost_12m": 7,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 61,
+        "last_coaching_days_ago": 46,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 48,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 910000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 51,
+          "INI-02": 48,
+          "INI-03": 96,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "24 clients with likely unmet needs"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 560,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1048",
+      "display_name": "Rafael J.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Southeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 60,
+          "attainment_pct": 21.9,
+          "pace_vs_plan_pct": 50
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 6,
+        "touches_prior_30d": 5,
+        "activity_trend": "up",
+        "activity_change_pct": 20,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 9,
+        "meetings_planned_30d": 15,
+        "tool_logins_30d": 15
+      },
+      "pipeline": {
+        "open_opportunities": 1,
+        "open_value_usd": 36000,
+        "stage_distribution": {
+          "prospect": 0,
+          "discovery": 0,
+          "proposal": 0,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.32,
+        "win_rate_pct_90d": null,
+        "avg_cycle_days": null
+      },
+      "production": {
+        "average_deal_size_usd": 32100,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": -3
+      },
+      "book": {
+        "active_clients": 20,
+        "dormant_clients": 3,
+        "dormant_est_value_usd": 32000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 93,
+        "clients_lost_12m": 0,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 62,
+        "last_coaching_days_ago": 177,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": null,
+        "disengagement_risk": null,
+        "opportunity_estimate_usd": null,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": 52,
+          "INI-04": 95
+        },
+        "reason_codes": [
+          "Fewer than 14 days of data; scores suppressed"
+        ],
+        "confidence": "insufficient_data"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 10,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "offering_mix",
+          "win_rate_pct",
+          "avg_cycle_days"
+        ]
+      }
+    },
+    {
+      "id": "TM-1049",
+      "display_name": "Ingrid T.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "1-3 yrs",
+        "territory": "Southwest",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 46.2,
+          "pace_vs_plan_pct": 106
+        }
+      },
+      "activity": {
+        "touches_7d": 6,
+        "touches_30d": 34,
+        "touches_prior_30d": 32,
+        "activity_trend": "flat",
+        "activity_change_pct": 6,
+        "days_since_last_activity": 1,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 26
+      },
+      "pipeline": {
+        "open_opportunities": 4,
+        "open_value_usd": 133000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 1,
+          "proposal": 0,
+          "decision": 1
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.35,
+        "win_rate_pct_90d": 33,
+        "avg_cycle_days": 88
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": {
+          "offering_a_pct": 66,
+          "offering_b_pct": 13,
+          "offering_c_pct": 21
+        },
+        "change_vs_prior_quarter_pct": 15
+      },
+      "book": {
+        "active_clients": 151,
+        "dormant_clients": 13,
+        "dormant_est_value_usd": 127000,
+        "whitespace_clients": 20,
+        "top3_client_share_pct": 37,
+        "clients_lost_12m": 8,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 8
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 1,
+          "target": 6,
+          "days_to_first_action": 5,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 67,
+        "last_coaching_days_ago": 220,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 35,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 469000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 43,
+          "INI-02": 93,
+          "INI-03": 89,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "20 clients with likely unmet needs",
+          "13 dormant clients (est. $127,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 555,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": [
+          "average_deal_size_usd"
+        ]
+      }
+    },
+    {
+      "id": "TM-1050",
+      "display_name": "Rosa E.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 22.5,
+          "pace_vs_plan_pct": 52
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 11,
+        "touches_prior_30d": 18,
+        "activity_trend": "down",
+        "activity_change_pct": -39,
+        "days_since_last_activity": 16,
+        "meetings_held_30d": 6,
+        "meetings_planned_30d": 14,
+        "tool_logins_30d": 21
+      },
+      "pipeline": {
+        "open_opportunities": 7,
+        "open_value_usd": 442000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 3,
+          "proposal": 3,
+          "decision": 0
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.63,
+        "win_rate_pct_90d": 20,
+        "avg_cycle_days": 58
+      },
+      "production": {
+        "average_deal_size_usd": 57500,
+        "offering_mix": {
+          "offering_a_pct": 31,
+          "offering_b_pct": 10,
+          "offering_c_pct": 59
+        },
+        "change_vs_prior_quarter_pct": -7
+      },
+      "book": {
+        "active_clients": 121,
+        "dormant_clients": 24,
+        "dormant_est_value_usd": 323000,
+        "whitespace_clients": 4,
+        "top3_client_share_pct": 66,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 9
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 62,
+        "last_coaching_days_ago": 10,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 92,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 209000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 95,
+          "INI-02": 84,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 39% vs. prior 30 days",
+          "No logged activity in 16 days",
+          "Pace at 52% of plan"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 125,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 14,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1051",
+      "display_name": "Andre J.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 37.0,
+          "pace_vs_plan_pct": 85
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 23,
+        "touches_prior_30d": 27,
+        "activity_trend": "down",
+        "activity_change_pct": -15,
+        "days_since_last_activity": 4,
+        "meetings_held_30d": 5,
+        "meetings_planned_30d": 7,
+        "tool_logins_30d": 55
+      },
+      "pipeline": {
+        "open_opportunities": 10,
+        "open_value_usd": 534000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 1,
+          "proposal": 4,
+          "decision": 2
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 0.76,
+        "win_rate_pct_90d": 28,
+        "avg_cycle_days": 49
+      },
+      "production": {
+        "average_deal_size_usd": 46000,
+        "offering_mix": {
+          "offering_a_pct": 42,
+          "offering_b_pct": 52,
+          "offering_c_pct": 6
+        },
+        "change_vs_prior_quarter_pct": -2
+      },
+      "book": {
+        "active_clients": 154,
+        "dormant_clients": 10,
+        "dormant_est_value_usd": 83000,
+        "whitespace_clients": 29,
+        "top3_client_share_pct": 36,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 0
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 3,
+          "target": 6,
+          "days_to_first_action": 1,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 0,
+          "target": 10,
+          "days_to_first_action": 10,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 85,
+        "last_coaching_days_ago": 93,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 44,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 543000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 37,
+          "INI-02": 54,
+          "INI-03": 93,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "2 stalled opportunities",
+          "29 clients with likely unmet needs"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 897,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1052",
+      "display_name": "Owen P.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Midwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 100,
+          "attainment_pct": 26.1,
+          "pace_vs_plan_pct": 60
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 16,
+        "touches_prior_30d": 27,
+        "activity_trend": "down",
+        "activity_change_pct": -41,
+        "days_since_last_activity": 6,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 9,
+        "tool_logins_30d": 3
+      },
+      "pipeline": {
+        "open_opportunities": 7,
+        "open_value_usd": 326000,
+        "stage_distribution": {
+          "prospect": 1,
+          "discovery": 3,
+          "proposal": 2,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.63,
+        "win_rate_pct_90d": 19,
+        "avg_cycle_days": 73
+      },
+      "production": {
+        "average_deal_size_usd": 63700,
+        "offering_mix": {
+          "offering_a_pct": 34,
+          "offering_b_pct": 38,
+          "offering_c_pct": 28
+        },
+        "change_vs_prior_quarter_pct": -35
+      },
+      "book": {
+        "active_clients": 98,
+        "dormant_clients": 21,
+        "dormant_est_value_usd": 419000,
+        "whitespace_clients": 9,
+        "top3_client_share_pct": 59,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 5,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 2,
+          "target": 10,
+          "days_to_first_action": 4,
+          "historical_responsiveness": "high"
+        },
+        "INI-03": {
+          "status": "accepted",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 72,
+        "last_coaching_days_ago": 106,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 83,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 379000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 89,
+          "INI-02": 86,
+          "INI-03": 36,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 41% vs. prior 30 days",
+          "Pace at 60% of plan",
+          "21 dormant clients (est. $419,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 330,
+        "activity_data_age_days": 2,
+        "pipeline_data_age_days": 0,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1053",
+      "display_name": "Lucia E.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "7+ yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 90,
+          "attainment_pct": 44.0,
+          "pace_vs_plan_pct": 101
+        }
+      },
+      "activity": {
+        "touches_7d": 7,
+        "touches_30d": 23,
+        "touches_prior_30d": 23,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 0,
+        "meetings_held_30d": 8,
+        "meetings_planned_30d": 10,
+        "tool_logins_30d": 16
+      },
+      "pipeline": {
+        "open_opportunities": 8,
+        "open_value_usd": 276000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 3,
+          "proposal": 3,
+          "decision": 0
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.32,
+        "win_rate_pct_90d": 23,
+        "avg_cycle_days": 46
+      },
+      "production": {
+        "average_deal_size_usd": 39600,
+        "offering_mix": {
+          "offering_a_pct": 68,
+          "offering_b_pct": 25,
+          "offering_c_pct": 7
+        },
+        "change_vs_prior_quarter_pct": 1
+      },
+      "book": {
+        "active_clients": 133,
+        "dormant_clients": 25,
+        "dormant_est_value_usd": 159000,
+        "whitespace_clients": 27,
+        "top3_client_share_pct": 65,
+        "clients_lost_12m": 4,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 10
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "started",
+          "progress": 3,
+          "target": 6,
+          "days_to_first_action": 5,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 4,
+          "target": 10,
+          "days_to_first_action": 5,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 88,
+        "last_coaching_days_ago": 105,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 38,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 441000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 90,
+          "INI-02": 89,
+          "INI-03": 91,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "27 clients with likely unmet needs",
+          "25 dormant clients (est. $159,000)"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 570,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 14,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1054",
+      "display_name": "Nadia R.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "0-1 yr",
+        "territory": "Southeast",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 60,
+          "attainment_pct": 18.4,
+          "pace_vs_plan_pct": 42
+        }
+      },
+      "activity": {
+        "touches_7d": 1,
+        "touches_30d": 5,
+        "touches_prior_30d": 4,
+        "activity_trend": "up",
+        "activity_change_pct": 25,
+        "days_since_last_activity": 6,
+        "meetings_held_30d": 4,
+        "meetings_planned_30d": 7,
+        "tool_logins_30d": 22
+      },
+      "pipeline": {
+        "open_opportunities": 2,
+        "open_value_usd": 42000,
+        "stage_distribution": {
+          "prospect": 0,
+          "discovery": 0,
+          "proposal": 1,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.35,
+        "win_rate_pct_90d": null,
+        "avg_cycle_days": null
+      },
+      "production": {
+        "average_deal_size_usd": null,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 2
+      },
+      "book": {
+        "active_clients": 13,
+        "dormant_clients": 1,
+        "dormant_est_value_usd": 7000,
+        "whitespace_clients": 3,
+        "top3_client_share_pct": 68,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 1,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "not_eligible"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "assigned",
+          "progress": null,
+          "target": 5,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 69,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 29,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 39000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": null,
+          "INI-02": null,
+          "INI-03": null,
+          "INI-04": 89
+        },
+        "reason_codes": [
+          "Pace at 42% of plan"
+        ],
+        "confidence": "low"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 19,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 3,
+        "missing_fields": [
+          "average_deal_size_usd",
+          "offering_mix",
+          "win_rate_pct",
+          "avg_cycle_days"
+        ]
+      }
+    },
+    {
+      "id": "TM-1055",
+      "display_name": "Grace G.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 2,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 45.0,
+          "pace_vs_plan_pct": 103
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 15,
+        "touches_prior_30d": 24,
+        "activity_trend": "down",
+        "activity_change_pct": -38,
+        "days_since_last_activity": 9,
+        "meetings_held_30d": 9,
+        "meetings_planned_30d": 19,
+        "tool_logins_30d": 25
+      },
+      "pipeline": {
+        "open_opportunities": 13,
+        "open_value_usd": 724000,
+        "stage_distribution": {
+          "prospect": 5,
+          "discovery": 5,
+          "proposal": 3,
+          "decision": 0
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.45,
+        "win_rate_pct_90d": 19,
+        "avg_cycle_days": 43
+      },
+      "production": {
+        "average_deal_size_usd": 53800,
+        "offering_mix": {
+          "offering_a_pct": 24,
+          "offering_b_pct": 22,
+          "offering_c_pct": 54
+        },
+        "change_vs_prior_quarter_pct": -8
+      },
+      "book": {
+        "active_clients": 71,
+        "dormant_clients": 18,
+        "dormant_est_value_usd": 179000,
+        "whitespace_clients": 15,
+        "top3_client_share_pct": 28,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 4,
+        "upcoming_events_90d": 0
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 7,
+          "target": 10,
+          "days_to_first_action": 2,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 2,
+          "target": 4,
+          "days_to_first_action": 13,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": null,
+        "last_coaching_days_ago": null,
+        "last_coaching_topic": null
+      },
+      "ai": {
+        "priority_score": 59,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 335000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 53,
+          "INI-02": 89,
+          "INI-03": 92,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 38% vs. prior 30 days",
+          "No logged activity in 9 days",
+          "15 clients with likely unmet needs"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 254,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "feature_adoption_score"
+        ]
+      }
+    },
+    {
+      "id": "TM-1056",
+      "display_name": "Kofi S.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Southeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 32.6,
+          "pace_vs_plan_pct": 75
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 17,
+        "touches_prior_30d": 29,
+        "activity_trend": "down",
+        "activity_change_pct": -41,
+        "days_since_last_activity": 13,
+        "meetings_held_30d": 8,
+        "meetings_planned_30d": 17,
+        "tool_logins_30d": 16
+      },
+      "pipeline": {
+        "open_opportunities": 10,
+        "open_value_usd": 407000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 4,
+          "proposal": 3,
+          "decision": 1
+        },
+        "stalled_opportunities": 2,
+        "pipeline_coverage_ratio": 0.54,
+        "win_rate_pct_90d": 21,
+        "avg_cycle_days": 50
+      },
+      "production": {
+        "average_deal_size_usd": 60000,
+        "offering_mix": {
+          "offering_a_pct": 21,
+          "offering_b_pct": 43,
+          "offering_c_pct": 36
+        },
+        "change_vs_prior_quarter_pct": 2
+      },
+      "book": {
+        "active_clients": 89,
+        "dormant_clients": 23,
+        "dormant_est_value_usd": 198000,
+        "whitespace_clients": 4,
+        "top3_client_share_pct": 51,
+        "clients_lost_12m": 3,
+        "clients_at_risk": 8,
+        "upcoming_events_90d": 7
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "assigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "not_eligible"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "overdue",
+        "feature_adoption_score": 58,
+        "last_coaching_days_ago": 198,
+        "last_coaching_topic": "Client outreach"
+      },
+      "ai": {
+        "priority_score": 77,
+        "disengagement_risk": "high",
+        "opportunity_estimate_usd": 170000,
+        "next_best_action": {
+          "type": "schedule_coaching",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 65,
+          "INI-02": 82,
+          "INI-03": null,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "Activity down 41% vs. prior 30 days",
+          "2 stalled opportunities",
+          "No logged activity in 13 days"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 542,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 3,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1057",
+      "display_name": "Lena F.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "3-7 yrs",
+        "territory": "Northeast",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 46.0,
+          "pace_vs_plan_pct": 106
+        }
+      },
+      "activity": {
+        "touches_7d": 2,
+        "touches_30d": 18,
+        "touches_prior_30d": 17,
+        "activity_trend": "flat",
+        "activity_change_pct": 6,
+        "days_since_last_activity": 5,
+        "meetings_held_30d": 8,
+        "meetings_planned_30d": 9,
+        "tool_logins_30d": 16
+      },
+      "pipeline": {
+        "open_opportunities": 14,
+        "open_value_usd": 883000,
+        "stage_distribution": {
+          "prospect": 4,
+          "discovery": 5,
+          "proposal": 2,
+          "decision": 3
+        },
+        "stalled_opportunities": 1,
+        "pipeline_coverage_ratio": 0.57,
+        "win_rate_pct_90d": 26,
+        "avg_cycle_days": 28
+      },
+      "production": {
+        "average_deal_size_usd": 62100,
+        "offering_mix": {
+          "offering_a_pct": 29,
+          "offering_b_pct": 64,
+          "offering_c_pct": 7
+        },
+        "change_vs_prior_quarter_pct": -21
+      },
+      "book": {
+        "active_clients": 86,
+        "dormant_clients": 25,
+        "dormant_est_value_usd": 261000,
+        "whitespace_clients": 15,
+        "top3_client_share_pct": 26,
+        "clients_lost_12m": 2,
+        "clients_at_risk": 7,
+        "upcoming_events_90d": 1
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "assigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "started",
+          "progress": 1,
+          "target": 10,
+          "days_to_first_action": 12,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "assigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 78,
+        "last_coaching_days_ago": 174,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 55,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 486000,
+        "next_best_action": {
+          "type": "monitor",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 44,
+          "INI-02": 86,
+          "INI-03": 90,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "15 clients with likely unmet needs",
+          "25 dormant clients (est. $261,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 568,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 1,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1058",
+      "display_name": "Zara T.",
+      "profile": {
+        "segment": "Developing",
+        "tenure_band": "1-3 yrs",
+        "territory": "Southwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 70,
+          "attainment_pct": 49.4,
+          "pace_vs_plan_pct": 114
+        }
+      },
+      "activity": {
+        "touches_7d": 5,
+        "touches_30d": 22,
+        "touches_prior_30d": 25,
+        "activity_trend": "down",
+        "activity_change_pct": -12,
+        "days_since_last_activity": 3,
+        "meetings_held_30d": 10,
+        "meetings_planned_30d": 14,
+        "tool_logins_30d": 29
+      },
+      "pipeline": {
+        "open_opportunities": 11,
+        "open_value_usd": 152000,
+        "stage_distribution": {
+          "prospect": 5,
+          "discovery": 2,
+          "proposal": 3,
+          "decision": 1
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.77,
+        "win_rate_pct_90d": 27,
+        "avg_cycle_days": 51
+      },
+      "production": {
+        "average_deal_size_usd": 21400,
+        "offering_mix": null,
+        "change_vs_prior_quarter_pct": 22
+      },
+      "book": {
+        "active_clients": 95,
+        "dormant_clients": 16,
+        "dormant_est_value_usd": 119000,
+        "whitespace_clients": 22,
+        "top3_client_share_pct": 52,
+        "clients_lost_12m": 9,
+        "clients_at_risk": 6,
+        "upcoming_events_90d": 9
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": null
+        },
+        "INI-02": {
+          "status": "accepted",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 72,
+        "last_coaching_days_ago": 42,
+        "last_coaching_topic": "Pipeline review"
+      },
+      "ai": {
+        "priority_score": 36,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 293000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-03"
+        },
+        "initiative_fit": {
+          "INI-01": 36,
+          "INI-02": 80,
+          "INI-03": 88,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "22 clients with likely unmet needs",
+          "16 dormant clients (est. $119,000)"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 627,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 0,
+        "missing_fields": [
+          "offering_mix"
+        ]
+      }
+    },
+    {
+      "id": "TM-1059",
+      "display_name": "Leila P.",
+      "profile": {
+        "segment": "High Performer",
+        "tenure_band": "7+ yrs",
+        "territory": "Midwest",
+        "support_tier": 1,
+        "goal": {
+          "metric": "units",
+          "target": 160,
+          "attainment_pct": 51.4,
+          "pace_vs_plan_pct": 118
+        }
+      },
+      "activity": {
+        "touches_7d": 3,
+        "touches_30d": 14,
+        "touches_prior_30d": 14,
+        "activity_trend": "flat",
+        "activity_change_pct": 0,
+        "days_since_last_activity": 2,
+        "meetings_held_30d": 7,
+        "meetings_planned_30d": 8,
+        "tool_logins_30d": 33
+      },
+      "pipeline": {
+        "open_opportunities": 7,
+        "open_value_usd": 652000,
+        "stage_distribution": {
+          "prospect": 2,
+          "discovery": 2,
+          "proposal": 1,
+          "decision": 2
+        },
+        "stalled_opportunities": 0,
+        "pipeline_coverage_ratio": 0.76,
+        "win_rate_pct_90d": 35,
+        "avg_cycle_days": 31
+      },
+      "production": {
+        "average_deal_size_usd": 106800,
+        "offering_mix": {
+          "offering_a_pct": 61,
+          "offering_b_pct": 22,
+          "offering_c_pct": 17
+        },
+        "change_vs_prior_quarter_pct": 25
+      },
+      "book": {
+        "active_clients": 89,
+        "dormant_clients": 17,
+        "dormant_est_value_usd": 195000,
+        "whitespace_clients": 5,
+        "top3_client_share_pct": 42,
+        "clients_lost_12m": 0,
+        "clients_at_risk": 2,
+        "upcoming_events_90d": 0
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "accepted",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-02": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 10,
+          "days_to_first_action": null,
+          "historical_responsiveness": "medium"
+        },
+        "INI-03": {
+          "status": "started",
+          "progress": 2,
+          "target": 4,
+          "days_to_first_action": 7,
+          "historical_responsiveness": "low"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "in_progress",
+        "feature_adoption_score": 69,
+        "last_coaching_days_ago": 63,
+        "last_coaching_topic": "Product knowledge"
+      },
+      "ai": {
+        "priority_score": 20,
+        "disengagement_risk": "low",
+        "opportunity_estimate_usd": 335000,
+        "next_best_action": {
+          "type": "join_initiative",
+          "initiative_id": "INI-02"
+        },
+        "initiative_fit": {
+          "INI-01": 63,
+          "INI-02": 89,
+          "INI-03": 74,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "17 dormant clients (est. $195,000)",
+          "Ahead of pace with rising activity"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 377,
+        "activity_data_age_days": 0,
+        "pipeline_data_age_days": 2,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "TM-1060",
+      "display_name": "Omar L.",
+      "profile": {
+        "segment": "Core",
+        "tenure_band": "1-3 yrs",
+        "territory": "Southwest",
+        "support_tier": 3,
+        "goal": {
+          "metric": "units",
+          "target": 110,
+          "attainment_pct": 28.1,
+          "pace_vs_plan_pct": 65
+        }
+      },
+      "activity": {
+        "touches_7d": 4,
+        "touches_30d": 17,
+        "touches_prior_30d": 16,
+        "activity_trend": "flat",
+        "activity_change_pct": 6,
+        "days_since_last_activity": 8,
+        "meetings_held_30d": 10,
+        "meetings_planned_30d": 14,
+        "tool_logins_30d": 21
+      },
+      "pipeline": {
+        "open_opportunities": 9,
+        "open_value_usd": 358000,
+        "stage_distribution": {
+          "prospect": 3,
+          "discovery": 3,
+          "proposal": 1,
+          "decision": 2
+        },
+        "stalled_opportunities": 6,
+        "pipeline_coverage_ratio": 0.34,
+        "win_rate_pct_90d": 18,
+        "avg_cycle_days": 70
+      },
+      "production": {
+        "average_deal_size_usd": 40600,
+        "offering_mix": {
+          "offering_a_pct": 42,
+          "offering_b_pct": 34,
+          "offering_c_pct": 24
+        },
+        "change_vs_prior_quarter_pct": -19
+      },
+      "book": {
+        "active_clients": 59,
+        "dormant_clients": 4,
+        "dormant_est_value_usd": 46000,
+        "whitespace_clients": 12,
+        "top3_client_share_pct": 28,
+        "clients_lost_12m": 5,
+        "clients_at_risk": 3,
+        "upcoming_events_90d": 6
+      },
+      "initiatives": {
+        "INI-01": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 6,
+          "days_to_first_action": null,
+          "historical_responsiveness": "low"
+        },
+        "INI-02": {
+          "status": "not_eligible"
+        },
+        "INI-03": {
+          "status": "eligible_unassigned",
+          "progress": null,
+          "target": 4,
+          "days_to_first_action": null,
+          "historical_responsiveness": "high"
+        },
+        "INI-04": {
+          "status": "not_eligible"
+        }
+      },
+      "capability": {
+        "training_status": "completed",
+        "feature_adoption_score": 43,
+        "last_coaching_days_ago": 149,
+        "last_coaching_topic": "Time management"
+      },
+      "ai": {
+        "priority_score": 60,
+        "disengagement_risk": "medium",
+        "opportunity_estimate_usd": 175000,
+        "next_best_action": {
+          "type": "unstall_opportunities",
+          "initiative_id": null
+        },
+        "initiative_fit": {
+          "INI-01": 54,
+          "INI-02": null,
+          "INI-03": 75,
+          "INI-04": null
+        },
+        "reason_codes": [
+          "6 stalled opportunities",
+          "No logged activity in 8 days",
+          "Pace at 65% of plan"
+        ],
+        "confidence": "high"
+      },
+      "flags": [],
+      "data_quality": {
+        "days_of_data": 858,
+        "activity_data_age_days": 1,
+        "pipeline_data_age_days": 3,
+        "missing_fields": []
+      }
+    }
+  ]
+}
