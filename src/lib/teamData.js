@@ -170,6 +170,27 @@ export function aiConfidence(mem = members) {
   }
 }
 
+// Premade eligibility criteria for the create-initiative flow, grouped for a
+// Bumble-style multi-select. Linked to the existing system: segment and tenure
+// options are derived from the actual team, and the "book" thresholds mirror the
+// eligibility criteria the seeded initiatives (INI-01…04) already use.
+export function eligibilityCatalog(mem = members) {
+  const segments = [...new Set(mem.map((m) => m.profile?.segment).filter(Boolean))].sort()
+  const tenures = [...new Set(mem.map((m) => m.profile?.tenure_band).filter(Boolean))].sort()
+  return [
+    { group: 'Segment', options: segments.map((s) => ({ id: `segment:${s}`, label: s })) },
+    { group: 'Tenure', options: tenures.map((t) => ({ id: `tenure:${t}`, label: `Tenure ${t}` })) },
+    {
+      group: 'Book',
+      options: [
+        { id: 'book:active20', label: 'Active clients ≥ 20' },
+        { id: 'book:dormant10', label: 'Dormant clients ≥ 10' },
+        { id: 'book:whitespace5', label: 'Whitespace clients ≥ 5' },
+      ],
+    },
+  ]
+}
+
 export function buckets(mem = members) {
   const rows = mem.map(toRow)
   const all = [...rows].sort(byName)

@@ -1,6 +1,27 @@
 // Small token-based form primitives. The project had no form controls; these are
 // the shared inputs used by the create-initiative wizard and member picker.
 // Everything uses the @theme tokens (no hardcoded colors/radii).
+import { Plus, Check } from 'lucide-react'
+
+// Bumble-style selectable pill. Unselected shows a "+" to indicate adding;
+// selected fills in with a check.
+export function OptionPill({ label, selected, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={selected}
+      className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-[13px] font-medium transition ${
+        selected
+          ? 'border-ink bg-ink text-card'
+          : 'border-line bg-card text-ink hover:border-line-strong hover:bg-sunken'
+      }`}
+    >
+      {selected ? <Check size={15} /> : <Plus size={15} className="text-ink-3" />}
+      {label}
+    </button>
+  )
+}
 
 const FIELD =
   'w-full rounded-tile border border-line bg-card px-3 py-2.5 text-[14px] text-ink ' +

@@ -5,11 +5,12 @@
 import { useMemo, useState } from 'react'
 import { ChevronLeft, X, Check } from 'lucide-react'
 import { useData } from '../lib/store'
+import { eligibilityCatalog } from '../lib/teamData'
 import { Avatar } from './ui'
-import { Button, FieldLabel, TextInput, NumberField, DateField, Textarea } from './form'
+import { Button, FieldLabel, TextInput, NumberField, DateField, Textarea, OptionPill } from './form'
 import MemberPicker from './MemberPicker'
 
-const EMPTY = { name: '', description: '', start: '', end: '', target: '', metric: '', eligible: '' }
+const EMPTY = { name: '', description: '', start: '', end: '', target: '', metric: '', eligibility: [] }
 
 const STEPS = [
   { id: 'basics', title: 'Name your initiative' },
@@ -28,8 +29,18 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
   const [launched, setLaunched] = useState(null) // { id, count } once saved
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
+  const toggleEligibility = (label) =>
+    setForm((f) => ({
+      ...f,
+      eligibility: f.eligibility.includes(label)
+        ? f.eligibility.filter((x) => x !== label)
+        : [...f.eligibility, label],
+    }))
   const dirty = useMemo(
-    () => addedIds.length > 0 || Object.values(form).some((v) => String(v).trim() !== ''),
+    () =>
+      addedIds.length > 0 ||
+      form.eligibility.length > 0 ||
+      Object.entries(form).some(([k, v]) => k !== 'eligibility' && String(v).trim() !== ''),
     [form, addedIds],
   )
 
@@ -38,7 +49,7 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
       case 'basics': return form.name.trim() !== ''
       case 'timeline': return form.start !== '' && form.end !== '' && form.end >= form.start
       case 'goal': return Number(form.target) > 0
-      case 'eligibility': return form.eligible.trim() !== ''
+      case 'eligibility': return form.eligibility.length > 0
       case 'assign': return addedIds.length > 0
       default: return true
     }
@@ -51,7 +62,7 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
   }
 
   const launch = () => {
-    const id = createInitiative(form)
+    const id = createInitiative({ ...form, eligible: form.eligibility.join(', ') })
     assignMembers(id, addedIds, { target: form.target })
     setLaunched({ id, count: addedIds.length })
   }
@@ -112,6 +123,7 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
                 id={STEPS[step].id}
                 form={form}
                 set={set}
+                toggleEligibility={toggleEligibility}
                 members={members}
                 addedIds={addedIds}
                 setAddedIds={setAddedIds}
@@ -133,7 +145,7 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
   )
 }
 
-function StepBody({ id, form, set, members, addedIds, setAddedIds }) {
+function StepBody({ id, form, set, toggleEligibility, members, addedIds, setAddedIds }) {
   switch (id) {
     case 'basics':
       return (
@@ -175,13 +187,8 @@ function StepBody({ id, form, set, members, addedIds, setAddedIds }) {
         </div>
       )
     case 'eligibility':
-      return (
-        <div>
-          <FieldLabel htmlFor="ini-elig">Eligibility requirement</FieldLabel>
-          <Textarea id="ini-elig" rows={3} value={form.eligible} onChange={set('eligible')} placeholder="e.g. Tenure 1+ years, active clients >= 20" />
-          <p className="mt-2 text-[12px] text-ink-3">Describe who qualifies. You still choose exactly who to assign in the next step.</p>
-        </div>
-      )
+      return <EligibilityPicker selected={form.eligibility} onToggle={toggleEligibility} />
+
     case 'assign':
       return (
         <>
@@ -196,6 +203,32 @@ function StepBody({ id, form, set, members, addedIds, setAddedIds }) {
     default:
       return null
   }
+}
+
+function EligibilityPicker({ selected, onToggle }) {
+  const catalog = eligibilityCatalog()
+  return (
+    <div className="space-y-6">
+      <p className="-mt-4 text-[14px] text-ink-2">
+        Pick the criteria that define who qualifies. You still choose exactly who to assign next.
+      </p>
+      {catalog.map((grp) => (
+        <div key={grp.group}>
+          <div className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-ink-3">{grp.group}</div>
+          <div className="flex flex-wrap gap-2">
+            {grp.options.map((opt) => (
+              <OptionPill
+                key={opt.id}
+                label={opt.label}
+                selected={selected.includes(opt.label)}
+                onClick={() => onToggle(opt.label)}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 function Row({ label, children }) {
@@ -216,7 +249,7 @@ function Review({ form, members, addedIds }) {
         <Row label="Description">{form.description}</Row>
         <Row label="Timeline">{form.start && form.end ? `${form.start} → ${form.end}` : null}</Row>
         <Row label="Goal">{Number(form.target) > 0 ? `${form.target} ${form.metric || 'activities'} per member` : null}</Row>
-        <Row label="Eligibility">{form.eligible}</Row>
+        <Row label="Eligibility">{form.eligibility.join(', ')}</Row>
       </div>
       <div>
         <div className="mb-2 text-[13px] font-medium text-ink">Assigning {added.length} {added.length === 1 ? 'member' : 'members'}</div>
