@@ -3,17 +3,22 @@
 //           Recommended = ranked by AI opportunity estimate (highest value first);
 //           All = alphabetical. A row toggles the member in/out of Added.
 //   Right — "Added" list: pre-populated from the team-view selection; remove with ✕.
+// Hovering a source row shows a tooltip: AI confidence, why, which of the chosen
+// eligibility criteria the member matches, and when their data was last updated.
 import { useMemo, useState } from 'react'
 import { Search, Check, Plus, X } from 'lucide-react'
-import { Avatar } from './ui'
+import { Avatar, ConfidenceMeter } from './ui'
+import { confMeta, matchedCriteria, dataAgeLabel } from '../lib/teamData'
 
 const sub = (m) => [m.profile?.segment, m.profile?.territory].filter(Boolean).join(' · ')
 
-function SourceRow({ member, added, onToggle }) {
+function SourceRow({ member, added, onToggle, onHover }) {
   return (
     <button
       type="button"
       onClick={() => onToggle(member.id)}
+      onMouseEnter={(e) => onHover(member, e.currentTarget.getBoundingClientRect())}
+      onMouseLeave={() => onHover(null)}
       className="flex w-full items-center gap-3 rounded-tile px-2.5 py-2 text-left transition hover:bg-sunken"
     >
       <Avatar name={member.display_name} size={34} />
@@ -22,7 +27,7 @@ function SourceRow({ member, added, onToggle }) {
         <span className="block truncate text-[12px] text-ink-3">{sub(member)}</span>
       </span>
       {added ? (
-        <Check size={18} className="shrink-0 text-link" />
+        <Check size={18} className="shrink-0 text-ink" />
       ) : (
         <Plus size={18} className="shrink-0 text-ink-3" />
       )}
@@ -30,10 +35,66 @@ function SourceRow({ member, added, onToggle }) {
   )
 }
 
-export default function MemberPicker({ members, addedIds, onChange }) {
+function RecommendationTooltip({ member, rect, criteria }) {
+  const cm = confMeta(member.ai?.confidence)
+  const reasons = (member.ai?.reason_codes || []).join(' · ')
+  const matches = matchedCriteria(member, criteria)
+
+  const W = 290
+  const estH = 200
+  let left = rect.right + 10
+  if (left + W > window.innerWidth - 8) left = rect.left - W - 10
+  if (left < 8) left = 8
+  let top = rect.top
+  if (top + estH > window.innerHeight - 8) top = window.innerHeight - estH - 8
+  if (top < 8) top = 8
+
+  return (
+    <div
+      style={{ position: 'fixed', top, left, width: W, zIndex: 60 }}
+      className="pointer-events-none rounded-tile border border-line bg-card p-3 shadow-lg"
+    >
+      <div className="flex items-center justify-between gap-2">
+        <span className="truncate text-[13px] font-semibold text-ink">{member.display_name}</span>
+        <ConfidenceMeter level={cm.level} label={cm.label} />
+      </div>
+      <div className="mt-2.5 space-y-2.5">
+        <div>
+          <div className="text-[11px] font-medium uppercase tracking-wide text-ink-3">Why AI suggests them</div>
+          <div className="mt-0.5 text-[12px] leading-snug text-ink-2">{reasons || '—'}</div>
+        </div>
+        <div>
+          <div className="text-[11px] font-medium uppercase tracking-wide text-ink-3">Matching criteria</div>
+          {matches.length ? (
+            <div className="mt-1 flex flex-wrap gap-1">
+              {matches.map((c) => (
+                <span key={c.id} className="inline-flex items-center rounded-full bg-sunken px-2 py-0.5 text-[11px] font-medium text-ink-2">
+                  {c.label}
+                </span>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-0.5 text-[12px] text-ink-2">
+              {criteria.length ? 'None of the chosen criteria' : 'No criteria chosen'}
+            </div>
+          )}
+        </div>
+        <div className="flex items-center justify-between border-t border-line pt-2 text-[12px]">
+          <span className="text-ink-3">Data updated</span>
+          <span className="font-medium text-ink-2">{dataAgeLabel(member)}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function MemberPicker({ members, addedIds, onChange, criteria = [] }) {
   const [query, setQuery] = useState('')
   const [tab, setTab] = useState('recommended')
+  const [hover, setHover] = useState(null) // { member, rect }
   const addedSet = useMemo(() => new Set(addedIds), [addedIds])
+
+  const onHover = (member, rect) => setHover(member ? { member, rect } : null)
 
   const toggle = (id) => {
     if (addedSet.has(id)) onChange(addedIds.filter((x) => x !== id))
@@ -100,7 +161,7 @@ export default function MemberPicker({ members, addedIds, onChange }) {
             <p className="px-2.5 py-6 text-center text-[13px] text-ink-3">No matches</p>
           ) : (
             source.map((m) => (
-              <SourceRow key={m.id} member={m} added={addedSet.has(m.id)} onToggle={toggle} />
+              <SourceRow key={m.id} member={m} added={addedSet.has(m.id)} onToggle={toggle} onHover={onHover} />
             ))
           )}
         </div>
@@ -140,6 +201,8 @@ export default function MemberPicker({ members, addedIds, onChange }) {
           )}
         </div>
       </div>
+
+      {hover && <RecommendationTooltip member={hover.member} rect={hover.rect} criteria={criteria} />}
     </div>
   )
 }

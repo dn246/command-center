@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import {
   PageHeader, SectionTitle, StatCard, InitiativeCard, DataTable,
-  Avatar, RiskBadge, NbaPill, ViewAllLink, ConfidenceMeter,
+  Avatar, RiskBadge, NbaPill, ViewAllLink, ConfidenceMeter, AiDisclosure,
 } from '../components/ui'
 import { useData } from '../lib/store'
 import {
@@ -143,6 +143,7 @@ export default function HomePage({ setPage }) {
         />
       </section>
 
+      <AiDisclosure className="mb-2" />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {
-  PageHeader, Tabs, SearchField, DataTable, Avatar, RiskBadge, NbaPill, InitiativeChip, InfoNote,
+  PageHeader, Tabs, SearchField, DataTable, Avatar, RiskBadge, NbaPill, InitiativeChip, InfoNote, AiDisclosure,
 } from '../components/ui'
 import SelectionBar from '../components/SelectionBar'
 import { useData } from '../lib/store'
@@ -142,6 +142,8 @@ export default function MyTeamPage({ onCreateInitiative }) {
         selectedIds={selectedIds}
         onRowSelect={onRowSelect}
       />
+
+      <AiDisclosure className="mt-3" />
     </>
   )
 }

@@ -170,25 +170,45 @@ export function aiConfidence(mem = members) {
   }
 }
 
-// Premade eligibility criteria for the create-initiative flow, grouped for a
-// Bumble-style multi-select. Linked to the existing system: segment and tenure
-// options are derived from the actual team, and the "book" thresholds mirror the
-// eligibility criteria the seeded initiatives (INI-01…04) already use.
-export function eligibilityCatalog(mem = members) {
+// Premade eligibility criteria, linked to the data model. Segment and tenure
+// options are derived from the actual team; book criteria are a checkable field
+// plus a threshold the lead enters. Each selected criterion is a structured
+// object so it can be matched against members (for the recommendation tooltip).
+export function eligibilityOptions(mem = members) {
   const segments = [...new Set(mem.map((m) => m.profile?.segment).filter(Boolean))].sort()
   const tenures = [...new Set(mem.map((m) => m.profile?.tenure_band).filter(Boolean))].sort()
-  return [
-    { group: 'Segment', options: segments.map((s) => ({ id: `segment:${s}`, label: s })) },
-    { group: 'Tenure', options: tenures.map((t) => ({ id: `tenure:${t}`, label: `Tenure ${t}` })) },
-    {
-      group: 'Book',
-      options: [
-        { id: 'book:active20', label: 'Active clients ≥ 20' },
-        { id: 'book:dormant10', label: 'Dormant clients ≥ 10' },
-        { id: 'book:whitespace5', label: 'Whitespace clients ≥ 5' },
-      ],
-    },
-  ]
+  return {
+    segment: segments.map((s) => ({ id: `segment:${s}`, type: 'segment', value: s, label: s })),
+    tenure: tenures.map((t) => ({ id: `tenure:${t}`, type: 'tenure', value: t, label: `Tenure ${t}` })),
+  }
+}
+
+// Book criteria the lead checks and gives a threshold to. Defaults mirror the
+// criteria the seeded initiatives (INI-01…04) already use.
+export const BOOK_FIELDS = [
+  { id: 'active_clients', label: 'Active clients', defaultValue: 20 },
+  { id: 'dormant_clients', label: 'Dormant clients', defaultValue: 10 },
+  { id: 'whitespace_clients', label: 'Whitespace clients', defaultValue: 5 },
+]
+
+// Does a member satisfy a single structured criterion?
+export function criterionMatches(member, c) {
+  if (c.type === 'segment') return member.profile?.segment === c.value
+  if (c.type === 'tenure') return member.profile?.tenure_band === c.value
+  if (c.type === 'book') return (member.book?.[c.field] ?? 0) >= Number(c.value)
+  return false
+}
+
+export function matchedCriteria(member, criteria = []) {
+  return criteria.filter((c) => criterionMatches(member, c))
+}
+
+// How fresh is this member's activity data (data_quality.activity_data_age_days).
+export function dataAgeLabel(member) {
+  const d = member.data_quality?.activity_data_age_days
+  if (d == null) return 'Unknown'
+  if (d === 0) return 'Today'
+  return `${d} day${d === 1 ? '' : 's'} ago`
 }
 
 export function buckets(mem = members) {

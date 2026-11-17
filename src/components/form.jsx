@@ -3,6 +3,24 @@
 // Everything uses the @theme tokens (no hardcoded colors/radii).
 import { Plus, Check } from 'lucide-react'
 
+// Square checkbox (for the book-criteria rows).
+export function Checkbox({ checked, onChange, label }) {
+  return (
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={checked}
+      aria-label={label}
+      onClick={onChange}
+      className={`grid h-5 w-5 shrink-0 place-items-center rounded-md border transition ${
+        checked ? 'border-ink bg-ink text-card' : 'border-line-strong bg-card text-transparent hover:border-ink-3'
+      }`}
+    >
+      <Check size={14} />
+    </button>
+  )
+}
+
 // Bumble-style selectable pill. Unselected shows a "+" to indicate adding;
 // selected fills in with a check.
 export function OptionPill({ label, selected, onClick }) {

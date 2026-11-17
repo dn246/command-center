@@ -2,15 +2,20 @@
 // a back chevron + centered title + close ✕, one centered screen of related fields
 // at a time, and a primary Continue button bottom-right. Related fields are grouped
 // into steps; the last data step is the member picker, then Review → Confirmation.
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { ChevronLeft, X, Check } from 'lucide-react'
 import { useData } from '../lib/store'
-import { eligibilityCatalog } from '../lib/teamData'
-import { Avatar } from './ui'
-import { Button, FieldLabel, TextInput, NumberField, DateField, Textarea, OptionPill } from './form'
+import { eligibilityOptions, BOOK_FIELDS } from '../lib/teamData'
+import { Avatar, AiDisclosure } from './ui'
+import { Button, FieldLabel, TextInput, NumberField, DateField, Textarea, OptionPill, Checkbox } from './form'
 import MemberPicker from './MemberPicker'
 
-const EMPTY = { name: '', description: '', start: '', end: '', target: '', metric: '', eligibility: [] }
+const EMPTY = {
+  name: '', description: '', start: '', end: '', target: '', metric: '',
+  criteria: [], // structured segment/tenure criteria
+  bookValues: { active_clients: 20, dormant_clients: 10, whitespace_clients: 5 },
+  bookOn: { active_clients: false, dormant_clients: false, whitespace_clients: false },
+}
 
 const STEPS = [
   { id: 'basics', title: 'Name your initiative' },
@@ -28,28 +33,45 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
   const [addedIds, setAddedIds] = useState(seedIds)
   const [launched, setLaunched] = useState(null) // { id, count } once saved
 
+  const options = eligibilityOptions()
+
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
-  const toggleEligibility = (label) =>
+
+  const toggleCriterion = (opt) =>
     setForm((f) => ({
       ...f,
-      eligibility: f.eligibility.includes(label)
-        ? f.eligibility.filter((x) => x !== label)
-        : [...f.eligibility, label],
+      criteria: f.criteria.some((c) => c.id === opt.id)
+        ? f.criteria.filter((c) => c.id !== opt.id)
+        : [...f.criteria, opt],
     }))
-  const dirty = useMemo(
-    () =>
-      addedIds.length > 0 ||
-      form.eligibility.length > 0 ||
-      Object.entries(form).some(([k, v]) => k !== 'eligibility' && String(v).trim() !== ''),
-    [form, addedIds],
-  )
+  const toggleBook = (field) =>
+    setForm((f) => ({ ...f, bookOn: { ...f.bookOn, [field]: !f.bookOn[field] } }))
+  const setBookValue = (field, v) =>
+    setForm((f) => ({ ...f, bookValues: { ...f.bookValues, [field]: v } }))
+
+  // All selected criteria as structured objects (segment/tenure + checked book
+  // rows that have a positive value). Used for matching, display, and launch.
+  const bookCriteria = BOOK_FIELDS.filter(
+    (f) => form.bookOn[f.id] && Number(form.bookValues[f.id]) > 0,
+  ).map((f) => {
+    const v = Number(form.bookValues[f.id])
+    return { id: `book:${f.id}`, type: 'book', field: f.id, value: v, label: `${f.label} ≥ ${v}` }
+  })
+  const selectedCriteria = [...form.criteria, ...bookCriteria]
+  const eligibleLabel = selectedCriteria.map((c) => c.label).join(', ')
+
+  const dirty =
+    addedIds.length > 0 ||
+    form.criteria.length > 0 ||
+    Object.values(form.bookOn).some(Boolean) ||
+    ['name', 'description', 'start', 'end', 'target', 'metric'].some((k) => String(form[k]).trim() !== '')
 
   const canContinue = (() => {
     switch (STEPS[step].id) {
       case 'basics': return form.name.trim() !== ''
       case 'timeline': return form.start !== '' && form.end !== '' && form.end >= form.start
       case 'goal': return Number(form.target) > 0
-      case 'eligibility': return form.eligibility.length > 0
+      case 'eligibility': return selectedCriteria.length > 0
       case 'assign': return addedIds.length > 0
       default: return true
     }
@@ -62,7 +84,7 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
   }
 
   const launch = () => {
-    const id = createInitiative({ ...form, eligible: form.eligibility.join(', ') })
+    const id = createInitiative({ ...form, eligible: eligibleLabel })
     assignMembers(id, addedIds, { target: form.target })
     setLaunched({ id, count: addedIds.length })
   }
@@ -123,7 +145,12 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
                 id={STEPS[step].id}
                 form={form}
                 set={set}
-                toggleEligibility={toggleEligibility}
+                options={options}
+                onToggleCriterion={toggleCriterion}
+                onToggleBook={toggleBook}
+                onBookValue={setBookValue}
+                selectedCriteria={selectedCriteria}
+                eligibleLabel={eligibleLabel}
                 members={members}
                 addedIds={addedIds}
                 setAddedIds={setAddedIds}
@@ -145,7 +172,11 @@ export default function CreateInitiativeWizard({ seedIds = [], onClose }) {
   )
 }
 
-function StepBody({ id, form, set, toggleEligibility, members, addedIds, setAddedIds }) {
+function StepBody(props) {
+  const {
+    id, form, set, options, onToggleCriterion, onToggleBook, onBookValue,
+    selectedCriteria, eligibleLabel, members, addedIds, setAddedIds,
+  } = props
   switch (id) {
     case 'basics':
       return (
@@ -187,46 +218,102 @@ function StepBody({ id, form, set, toggleEligibility, members, addedIds, setAdde
         </div>
       )
     case 'eligibility':
-      return <EligibilityPicker selected={form.eligibility} onToggle={toggleEligibility} />
-
+      return (
+        <EligibilityPicker
+          options={options}
+          criteria={form.criteria}
+          onToggleCriterion={onToggleCriterion}
+          bookOn={form.bookOn}
+          bookValues={form.bookValues}
+          onToggleBook={onToggleBook}
+          onBookValue={onBookValue}
+        />
+      )
     case 'assign':
       return (
         <>
-          <p className="-mt-4 mb-5 text-[14px] text-ink-2">
+          <p className="-mt-4 mb-4 text-[14px] text-ink-2">
             Members you selected are already added. Add or remove anyone before launching.
           </p>
-          <MemberPicker members={members} addedIds={addedIds} onChange={setAddedIds} />
+          {selectedCriteria.length > 0 && (
+            <div className="mb-4">
+              <div className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-ink-3">Eligibility criteria</div>
+              <div className="flex flex-wrap gap-2">
+                {selectedCriteria.map((c) => (
+                  <span key={c.id} className="inline-flex items-center rounded-full bg-sunken px-3 py-1 text-[12px] font-medium text-ink-2">
+                    {c.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          <MemberPicker members={members} addedIds={addedIds} onChange={setAddedIds} criteria={selectedCriteria} />
+          <AiDisclosure className="mt-4" />
         </>
       )
     case 'review':
-      return <Review form={form} members={members} addedIds={addedIds} />
+      return <Review form={form} eligibleLabel={eligibleLabel} members={members} addedIds={addedIds} />
     default:
       return null
   }
 }
 
-function EligibilityPicker({ selected, onToggle }) {
-  const catalog = eligibilityCatalog()
+function Group({ label, children }) {
+  return (
+    <div>
+      <div className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-ink-3">{label}</div>
+      <div className="flex flex-wrap gap-2">{children}</div>
+    </div>
+  )
+}
+
+function EligibilityPicker({ options, criteria, onToggleCriterion, bookOn, bookValues, onToggleBook, onBookValue }) {
+  const isOn = (opt) => criteria.some((c) => c.id === opt.id)
   return (
     <div className="space-y-6">
       <p className="-mt-4 text-[14px] text-ink-2">
         Pick the criteria that define who qualifies. You still choose exactly who to assign next.
       </p>
-      {catalog.map((grp) => (
-        <div key={grp.group}>
-          <div className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-ink-3">{grp.group}</div>
-          <div className="flex flex-wrap gap-2">
-            {grp.options.map((opt) => (
-              <OptionPill
-                key={opt.id}
-                label={opt.label}
-                selected={selected.includes(opt.label)}
-                onClick={() => onToggle(opt.label)}
-              />
-            ))}
-          </div>
+
+      <Group label="Segment">
+        {options.segment.map((opt) => (
+          <OptionPill key={opt.id} label={opt.label} selected={isOn(opt)} onClick={() => onToggleCriterion(opt)} />
+        ))}
+      </Group>
+
+      <Group label="Tenure">
+        {options.tenure.map((opt) => (
+          <OptionPill key={opt.id} label={opt.label} selected={isOn(opt)} onClick={() => onToggleCriterion(opt)} />
+        ))}
+      </Group>
+
+      <div>
+        <div className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-ink-3">Book</div>
+        <p className="mb-2.5 text-[13px] text-ink-3">Check a criterion, then set its threshold.</p>
+        <div className="space-y-2">
+          {BOOK_FIELDS.map((f) => {
+            const on = bookOn[f.id]
+            return (
+              <div
+                key={f.id}
+                className={`flex items-center gap-3 rounded-tile border px-3 py-2.5 transition ${on ? 'border-line-strong' : 'border-line'} bg-card`}
+              >
+                <Checkbox checked={on} onChange={() => onToggleBook(f.id)} label={f.label} />
+                <span className={`flex-1 text-[14px] ${on ? 'text-ink' : 'text-ink-2'}`}>{f.label}</span>
+                <span className="text-[13px] text-ink-3">≥</span>
+                <NumberField
+                  value={bookValues[f.id]}
+                  onChange={(e) => onBookValue(f.id, e.target.value)}
+                  min={0}
+                  disabled={!on}
+                  aria-label={`${f.label} threshold`}
+                  className="w-24 disabled:bg-sunken disabled:text-ink-3"
+                />
+              </div>
+            )
+          })}
         </div>
-      ))}
+      </div>
     </div>
   )
 }
@@ -240,7 +327,7 @@ function Row({ label, children }) {
   )
 }
 
-function Review({ form, members, addedIds }) {
+function Review({ form, eligibleLabel, members, addedIds }) {
   const added = addedIds.map((id) => members.find((m) => m.id === id)).filter(Boolean)
   return (
     <div className="space-y-6">
@@ -249,7 +336,7 @@ function Review({ form, members, addedIds }) {
         <Row label="Description">{form.description}</Row>
         <Row label="Timeline">{form.start && form.end ? `${form.start} → ${form.end}` : null}</Row>
         <Row label="Goal">{Number(form.target) > 0 ? `${form.target} ${form.metric || 'activities'} per member` : null}</Row>
-        <Row label="Eligibility">{form.eligibility.join(', ')}</Row>
+        <Row label="Eligibility">{eligibleLabel}</Row>
       </div>
       <div>
         <div className="mb-2 text-[13px] font-medium text-ink">Assigning {added.length} {added.length === 1 ? 'member' : 'members'}</div>
