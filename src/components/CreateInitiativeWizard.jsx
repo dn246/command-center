@@ -5,9 +5,9 @@
 import { useState } from 'react'
 import { ChevronLeft, X, Check } from 'lucide-react'
 import { useData } from '../lib/store'
-import { eligibilityOptions, BOOK_FIELDS } from '../lib/teamData'
+import { eligibilityOptions, BOOK_FIELDS, METRIC_OPTIONS, metricLabel } from '../lib/teamData'
 import { Avatar, AiDisclosure } from './ui'
-import { Button, FieldLabel, TextInput, NumberField, DateField, Textarea, OptionPill, Checkbox } from './form'
+import { Button, FieldLabel, TextInput, NumberField, DateField, Textarea, OptionPill, SelectField } from './form'
 import MemberPicker from './MemberPicker'
 
 const EMPTY = {
@@ -213,7 +213,11 @@ function StepBody(props) {
           </div>
           <div>
             <FieldLabel htmlFor="ini-metric" hint="what you're counting">Metric</FieldLabel>
-            <TextInput id="ini-metric" value={form.metric} onChange={set('metric')} placeholder="e.g. client conversations" />
+            <SelectField id="ini-metric" value={form.metric} onChange={set('metric')} placeholder="Select a tracked metric">
+              {METRIC_OPTIONS.map((m) => (
+                <option key={m.id} value={m.id}>{m.label}</option>
+              ))}
+            </SelectField>
           </div>
         </div>
       )
@@ -296,19 +300,42 @@ function EligibilityPicker({ options, criteria, onToggleCriterion, bookOn, bookV
             return (
               <div
                 key={f.id}
-                className={`flex items-center gap-3 rounded-tile border px-3 py-2.5 transition ${on ? 'border-line-strong' : 'border-line'} bg-card`}
+                className={`rounded-tile border px-3.5 py-3 transition ${on ? 'border-line-strong' : 'border-line'} bg-card`}
               >
-                <Checkbox checked={on} onChange={() => onToggleBook(f.id)} label={f.label} />
-                <span className={`flex-1 text-[14px] ${on ? 'text-ink' : 'text-ink-2'}`}>{f.label}</span>
-                <span className="text-[13px] text-ink-3">≥</span>
-                <NumberField
-                  value={bookValues[f.id]}
-                  onChange={(e) => onBookValue(f.id, e.target.value)}
-                  min={0}
-                  disabled={!on}
-                  aria-label={`${f.label} threshold`}
-                  className="w-24 disabled:bg-sunken disabled:text-ink-3"
-                />
+                {/* The whole header toggles; the checkbox is a visual so there's
+                    no nested <button>. Label stays on one line. */}
+                <button
+                  type="button"
+                  role="checkbox"
+                  aria-checked={on}
+                  aria-label={f.label}
+                  onClick={() => onToggleBook(f.id)}
+                  className="flex w-full items-center gap-3 text-left"
+                >
+                  <span
+                    className={`grid h-5 w-5 shrink-0 place-items-center rounded-md border transition ${
+                      on ? 'border-ink bg-ink text-card' : 'border-line-strong bg-card text-transparent'
+                    }`}
+                  >
+                    <Check size={14} />
+                  </span>
+                  <span className={`whitespace-nowrap text-[14px] font-medium ${on ? 'text-ink' : 'text-ink-2'}`}>{f.label}</span>
+                </button>
+
+                {on && (
+                  <div className="mt-3 flex items-center gap-2 pl-8">
+                    <span className="text-[13px] text-ink-3">At least</span>
+                    <div className="w-28">
+                      <NumberField
+                        value={bookValues[f.id]}
+                        onChange={(e) => onBookValue(f.id, e.target.value)}
+                        min={0}
+                        aria-label={`${f.label} threshold`}
+                      />
+                    </div>
+                    <span className="whitespace-nowrap text-[13px] text-ink-3">clients</span>
+                  </div>
+                )}
               </div>
             )
           })}
@@ -335,7 +362,7 @@ function Review({ form, eligibleLabel, members, addedIds }) {
         <Row label="Name">{form.name}</Row>
         <Row label="Description">{form.description}</Row>
         <Row label="Timeline">{form.start && form.end ? `${form.start} → ${form.end}` : null}</Row>
-        <Row label="Goal">{Number(form.target) > 0 ? `${form.target} ${form.metric || 'activities'} per member` : null}</Row>
+        <Row label="Goal">{Number(form.target) > 0 ? `${form.target} ${(form.metric ? metricLabel(form.metric) : 'activities').toLowerCase()} per member` : null}</Row>
         <Row label="Eligibility">{eligibleLabel}</Row>
       </div>
       <div>

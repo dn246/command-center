@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SlidersHorizontal, ChevronDown } from 'lucide-react'
 import {
-  PageHeader, Tabs, SearchField, DataTable, Avatar, RiskBadge, NbaPill, InitiativeChip, InfoNote, AiDisclosure,
+  PageHeader, Tabs, SearchField, DataTable, Avatar, RiskBadge, NbaPill, InitiativeChip, InfoNote, AiDisclosure, Pager,
 } from '../components/ui'
 import SelectionBar from '../components/SelectionBar'
 import { useData } from '../lib/store'
@@ -53,21 +53,27 @@ const columns = [
   },
 ]
 
+const PAGE_SIZE = 10
+
 export default function MyTeamPage({ onCreateInitiative }) {
   const { buckets } = useData()
   const b = buckets()
-  const rows = b.all
+  const allRows = b.all
 
+  const [page, setPage] = useState(0)
   const [selectedIds, setSelectedIds] = useState(() => new Set())
   const [anchorId, setAnchorId] = useState(null)
   const [stubMsg, setStubMsg] = useState('')
+
+  // Show at most PAGE_SIZE people at a time; the pager steps through the rest.
+  const pageRows = allRows.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE)
 
   // Plain click toggles a row (and sets the range anchor); shift-click selects
   // the contiguous range between the anchor and the clicked row, Drive-style.
   const onRowSelect = (id, e) => {
     setStubMsg('')
     if (e.shiftKey && anchorId) {
-      const order = rows.map((r) => r.id)
+      const order = pageRows.map((r) => r.id)
       const a = order.indexOf(anchorId)
       const bI = order.indexOf(id)
       if (a !== -1 && bI !== -1) {
@@ -148,11 +154,20 @@ export default function MyTeamPage({ onCreateInitiative }) {
 
       <DataTable
         columns={columns}
-        rows={rows}
+        rows={pageRows}
         minW="900px"
         selectable
         selectedIds={selectedIds}
         onRowSelect={onRowSelect}
+      />
+
+      <Pager
+        className="mt-4"
+        page={page}
+        pageSize={PAGE_SIZE}
+        total={allRows.length}
+        onPrev={() => setPage((p) => Math.max(0, p - 1))}
+        onNext={() => setPage((p) => p + 1)}
       />
 
       <AiDisclosure className="mt-3" />

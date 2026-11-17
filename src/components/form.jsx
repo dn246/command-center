@@ -1,7 +1,7 @@
 // Small token-based form primitives. The project had no form controls; these are
 // the shared inputs used by the create-initiative wizard and member picker.
 // Everything uses the @theme tokens (no hardcoded colors/radii).
-import { Plus, Check } from 'lucide-react'
+import { Plus, Check, ChevronDown } from 'lucide-react'
 
 // Square checkbox (for the book-criteria rows).
 export function Checkbox({ checked, onChange, label }) {
@@ -68,6 +68,24 @@ export function DateField({ className = '', ...props }) {
 
 export function Textarea({ className = '', rows = 4, ...props }) {
   return <textarea rows={rows} className={`${FIELD} resize-none ${className}`} {...props} />
+}
+
+// Native select styled like the other fields. Shows the placeholder greyed out
+// until a real value is picked; chevron is decorative (the select owns clicks).
+export function SelectField({ className = '', placeholder, value, children, ...props }) {
+  return (
+    <div className="relative">
+      <select
+        value={value}
+        className={`${FIELD} cursor-pointer appearance-none pr-10 ${value ? '' : 'text-ink-3'} ${className}`}
+        {...props}
+      >
+        {placeholder && <option value="" disabled>{placeholder}</option>}
+        {children}
+      </select>
+      <ChevronDown size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-3" />
+    </div>
+  )
 }
 
 const BTN = {

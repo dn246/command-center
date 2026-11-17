@@ -65,7 +65,6 @@ function TopHeader() {
         <span className="text-left leading-tight">
           <span className="block text-[13px] font-semibold text-ink">Diana Nguyen</span>
           <span className="block text-[11px] text-ink-2">Enablement Lead</span>
-          <span className="block text-[11px] text-ink-3">diana.nguyen@example.com</span>
         </span>
         <ChevronDown size={16} className="text-ink-3" />
       </button>

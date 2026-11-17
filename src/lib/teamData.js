@@ -183,6 +183,23 @@ export function eligibilityOptions(mem = members) {
   }
 }
 
+// Metrics the system already tracks — the things an initiative can count. The
+// first four are the metric types the seeded initiatives (INI-01…04) use; the
+// rest are per-member activity/book series the dataset records. The initiative
+// stores the metric `id`; `metricLabel` renders it for people.
+export const METRIC_OPTIONS = [
+  { id: 'client_conversations', label: 'Client conversations' },
+  { id: 'dormant_clients_contacted', label: 'Dormant clients contacted' },
+  { id: 'proposals_sent', label: 'Proposals sent' },
+  { id: 'ramp_milestones_completed', label: 'Ramp milestones completed' },
+  { id: 'meetings_held', label: 'Meetings held' },
+  { id: 'whitespace_clients_converted', label: 'Whitespace clients converted' },
+]
+
+export function metricLabel(id) {
+  return METRIC_OPTIONS.find((m) => m.id === id)?.label ?? id
+}
+
 // Book criteria the lead checks and gives a threshold to. Defaults mirror the
 // criteria the seeded initiatives (INI-01…04) already use.
 export const BOOK_FIELDS = [
@@ -201,6 +218,20 @@ export function criterionMatches(member, c) {
 
 export function matchedCriteria(member, criteria = []) {
   return criteria.filter((c) => criterionMatches(member, c))
+}
+
+// Is a member actually eligible under the chosen criteria? Multi-select pills of
+// the same kind are "any of" (match Core OR Developing), while different kinds
+// must all hold (segment AND tenure AND each book threshold). No criteria → all
+// members qualify.
+export function meetsCriteria(member, criteria = []) {
+  if (!criteria.length) return true
+  const groups = {}
+  for (const c of criteria) {
+    const key = c.type === 'book' ? `book:${c.field}` : c.type
+    ;(groups[key] ||= []).push(c)
+  }
+  return Object.values(groups).every((group) => group.some((c) => criterionMatches(member, c)))
 }
 
 // How fresh is this member's activity data (data_quality.activity_data_age_days).

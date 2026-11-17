@@ -1,14 +1,15 @@
 // Two-list member picker for the Assign step (Google Calendar styling).
 //   Left  — source list: a search field + "Recommended" / "All" tabs.
-//           Recommended = ranked by AI opportunity estimate (highest value first);
-//           All = alphabetical. A row toggles the member in/out of Added.
+//           Recommended = only members who meet the chosen eligibility criteria,
+//           ranked by AI opportunity estimate (highest value first);
+//           All = everyone, alphabetical. A row toggles the member in/out of Added.
 //   Right — "Added" list: pre-populated from the team-view selection; remove with ✕.
 // Hovering a source row shows a tooltip: AI confidence, why, which of the chosen
 // eligibility criteria the member matches, and when their data was last updated.
 import { useMemo, useState } from 'react'
 import { Search, Check, Plus, X } from 'lucide-react'
 import { Avatar, ConfidenceMeter } from './ui'
-import { confMeta, matchedCriteria, dataAgeLabel } from '../lib/teamData'
+import { confMeta, matchedCriteria, meetsCriteria, dataAgeLabel } from '../lib/teamData'
 
 const sub = (m) => [m.profile?.segment, m.profile?.territory].filter(Boolean).join(' · ')
 
@@ -105,14 +106,16 @@ export default function MemberPicker({ members, addedIds, onChange, criteria = [
     const q = query.trim().toLowerCase()
     let list = members.filter((m) => !q || m.display_name.toLowerCase().includes(q))
     if (tab === 'recommended') {
-      list = [...list].sort(
-        (a, b) => (b.ai?.opportunity_estimate_usd ?? 0) - (a.ai?.opportunity_estimate_usd ?? 0),
-      )
+      // Recommended only surfaces people who actually meet the chosen eligibility
+      // criteria, ranked by AI opportunity estimate (highest value first).
+      list = list
+        .filter((m) => meetsCriteria(m, criteria))
+        .sort((a, b) => (b.ai?.opportunity_estimate_usd ?? 0) - (a.ai?.opportunity_estimate_usd ?? 0))
     } else {
       list = [...list].sort((a, b) => a.display_name.localeCompare(b.display_name))
     }
     return list
-  }, [members, query, tab])
+  }, [members, query, tab, criteria])
 
   const added = useMemo(
     () => addedIds.map((id) => members.find((m) => m.id === id)).filter(Boolean),
@@ -158,7 +161,11 @@ export default function MemberPicker({ members, addedIds, onChange, criteria = [
         </div>
         <div className="max-h-[320px] min-h-[200px] overflow-y-auto p-2">
           {source.length === 0 ? (
-            <p className="px-2.5 py-6 text-center text-[13px] text-ink-3">No matches</p>
+            <p className="px-2.5 py-6 text-center text-[13px] text-ink-3">
+              {tab === 'recommended' && !query
+                ? 'No members meet the chosen criteria. Switch to All to add anyone.'
+                : 'No matches'}
+            </p>
           ) : (
             source.map((m) => (
               <SourceRow key={m.id} member={m} added={addedSet.has(m.id)} onToggle={toggle} onHover={onHover} />

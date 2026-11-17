@@ -1,4 +1,4 @@
-import { Info, ChevronsUpDown, ChevronUp, ChevronDown } from 'lucide-react'
+import { Info, ChevronsUpDown, ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
 
 // ---- accent maps (full literal class names so Tailwind keeps them) -------
 const INI_ACCENT = {
@@ -324,6 +324,30 @@ export function InfoNote({ children }) {
         {children}
       </span>
     </span>
+  )
+}
+
+// Compact right-aligned pager (Material-style "1–10 of 60" with prev/next).
+export function Pager({ page, pageSize, total, onPrev, onNext, className = '' }) {
+  const start = total === 0 ? 0 : page * pageSize + 1
+  const end = Math.min(total, (page + 1) * pageSize)
+  const atStart = page === 0
+  const atEnd = end >= total
+  const arrow =
+    'grid h-8 w-8 place-items-center rounded-tile text-ink-2 transition hover:bg-sunken ' +
+    'disabled:cursor-not-allowed disabled:text-ink-3 disabled:opacity-40 disabled:hover:bg-transparent'
+  return (
+    <div className={`flex items-center justify-end gap-3 text-[13px] text-ink-2 ${className}`}>
+      <span className="tabular-nums">{start}–{end} of {total}</span>
+      <div className="flex items-center gap-1">
+        <button type="button" onClick={onPrev} disabled={atStart} aria-label="Previous page" className={arrow}>
+          <ChevronLeft size={18} />
+        </button>
+        <button type="button" onClick={onNext} disabled={atEnd} aria-label="Next page" className={arrow}>
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
   )
 }
 
