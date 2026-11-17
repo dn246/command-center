@@ -28,7 +28,7 @@ export default function App() {
       <AppShell page={page} setPage={setPage}>
         {page === 'home' && <HomePage setPage={setPage} />}
         {page === 'team' && <MyTeamPage onCreateInitiative={openWizard} />}
-        {page === 'initiatives' && <InitiativesPage onCreateInitiative={openWizard} />}
+        {page === 'initiatives' && <InitiativesPage />}
       </AppShell>
 
       {wizardSeed !== null && (

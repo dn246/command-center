@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { SlidersHorizontal, ChevronDown } from 'lucide-react'
 import {
   PageHeader, Tabs, SearchField, DataTable, Avatar, RiskBadge, NbaPill, InitiativeChip, InfoNote, AiDisclosure,
 } from '../components/ui'
@@ -126,7 +127,18 @@ export default function MyTeamPage({ onCreateInitiative }) {
         />
       ) : (
         <div className="mb-4 flex items-center justify-between gap-3">
-          <SearchField placeholder="Search team members" />
+          <div className="flex items-center gap-2">
+            <SearchField placeholder="Search team members" />
+            {/* Static filter control (visual only in this prototype). */}
+            <button
+              type="button"
+              className="inline-flex items-center gap-1.5 rounded-tile border border-line bg-card px-3 py-2 text-[13px] font-medium text-ink-2 transition hover:bg-sunken"
+            >
+              <SlidersHorizontal size={15} />
+              Filter
+              <ChevronDown size={14} className="text-ink-3" />
+            </button>
+          </div>
           <span className="flex items-center gap-1.5 text-[12px] text-ink-3">
             Tip: click rows to select · shift-click for a range
             <InfoNote>Click a team member to select them and reveal bulk actions. Shift-click selects a range. Filters and search are shown for structure in this mid-fi prototype; the “All” view is rendered.</InfoNote>
