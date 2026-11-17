@@ -108,19 +108,19 @@ const byName = (a, b) => a.name.localeCompare(b.name)
 const byPriority = (a, b) => b.priority - a.priority
 
 // --- aggregate selectors -------------------------------------------------
-export function overview() {
-  const assigned = members.filter(isAssigned).length
+export function overview(mem = members, inis = initiatives) {
+  const assigned = mem.filter(isAssigned).length
   return {
-    members: members.length,
-    initiatives: initiatives.length,
+    members: mem.length,
+    initiatives: inis.length,
     assigned,
-    unassigned: members.length - assigned,
+    unassigned: mem.length - assigned,
   }
 }
 
-export function initiativeStats() {
-  return initiatives.map((ini) => {
-    const rows = members.map((m) => m.initiatives[ini.id] || {})
+export function initiativeStats(inis = initiatives, mem = members) {
+  return inis.map((ini) => {
+    const rows = mem.map((m) => m.initiatives[ini.id] || {})
     const active = rows.filter((r) => ACTIVE.has(r.status))
     const numeric = active.filter(
       (r) => typeof r.progress === 'number' && r.target,
@@ -137,8 +137,8 @@ export function initiativeStats() {
     return {
       id: ini.id,
       name: ini.name,
-      short: INI[ini.id]?.short ?? ini.name,
-      key: INI[ini.id]?.key ?? 'ini01',
+      short: ini.short ?? INI[ini.id]?.short ?? ini.name,
+      key: ini.key ?? INI[ini.id]?.key ?? 'ini01',
       metric: ini.metric,
       targetPerMember: ini.target_per_member,
       assigned: active.length,
@@ -154,14 +154,14 @@ export function initiativeStats() {
 // Assumption: the dataset has no ground-truth "accuracy", so we surface the
 // model's own confidence rating (its self-assessed data completeness/freshness)
 // as the honest stand-in. Null confidence is counted as insufficient_data.
-export function aiConfidence() {
+export function aiConfidence(mem = members) {
   const levels = { high: 0, medium: 0, low: 0, insufficient_data: 0 }
-  for (const m of members) {
+  for (const m of mem) {
     const c = m.ai?.confidence
     if (c && c in levels) levels[c] += 1
     else levels.insufficient_data += 1
   }
-  const total = members.length
+  const total = mem.length
   return {
     total,
     ...levels,
@@ -170,11 +170,11 @@ export function aiConfidence() {
   }
 }
 
-export function buckets() {
-  const rows = members.map(toRow)
+export function buckets(mem = members) {
+  const rows = mem.map(toRow)
   const all = [...rows].sort(byName)
-  const attn = members.filter(needsAttention).map(toRow).sort(byPriority)
-  const unassigned = members.filter(isUnassigned).map(toRow).sort(byName)
-  const fresh = members.filter(isNew).map(toRow).sort(byName)
+  const attn = mem.filter(needsAttention).map(toRow).sort(byPriority)
+  const unassigned = mem.filter(isUnassigned).map(toRow).sort(byName)
+  const fresh = mem.filter(isNew).map(toRow).sort(byName)
   return { all, needsAttention: attn, unassigned, new: fresh }
 }

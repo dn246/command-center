@@ -4,9 +4,9 @@ import {
   PageHeader, SectionTitle, StatCard, InitiativeCard, DataTable,
   Avatar, RiskBadge, NbaPill, ViewAllLink, ConfidenceMeter,
 } from '../components/ui'
+import { useData } from '../lib/store'
 import {
-  overview, initiativeStats, buckets, riskMeta, riskRank,
-  confMeta, confRank, EL_NAME, meta,
+  riskMeta, riskRank, confMeta, confRank, EL_NAME, meta,
 } from '../lib/teamData'
 
 const HOME_LIMIT = 5
@@ -87,6 +87,7 @@ function MiniTable({ title, note, rows, columns, onMore, defaultSort }) {
 }
 
 export default function HomePage({ setPage }) {
+  const { overview, initiativeStats, buckets } = useData()
   const o = overview()
   const inis = initiativeStats()
   const b = buckets()

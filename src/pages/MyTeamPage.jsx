@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import {
   PageHeader, Tabs, SearchField, DataTable, Avatar, RiskBadge, NbaPill, InitiativeChip, InfoNote,
 } from '../components/ui'
-import { buckets, riskMeta } from '../lib/teamData'
+import SelectionBar from '../components/SelectionBar'
+import { useData } from '../lib/store'
+import { riskMeta } from '../lib/teamData'
 
 const columns = [
   {
@@ -49,8 +52,51 @@ const columns = [
   },
 ]
 
-export default function MyTeamPage() {
+export default function MyTeamPage({ onCreateInitiative }) {
+  const { buckets } = useData()
   const b = buckets()
+  const rows = b.all
+
+  const [selectedIds, setSelectedIds] = useState(() => new Set())
+  const [anchorId, setAnchorId] = useState(null)
+  const [stubMsg, setStubMsg] = useState('')
+
+  // Plain click toggles a row (and sets the range anchor); shift-click selects
+  // the contiguous range between the anchor and the clicked row, Drive-style.
+  const onRowSelect = (id, e) => {
+    setStubMsg('')
+    if (e.shiftKey && anchorId) {
+      const order = rows.map((r) => r.id)
+      const a = order.indexOf(anchorId)
+      const bI = order.indexOf(id)
+      if (a !== -1 && bI !== -1) {
+        const [lo, hi] = a < bI ? [a, bI] : [bI, a]
+        setSelectedIds(new Set(order.slice(lo, hi + 1)))
+        return
+      }
+    }
+    setSelectedIds((prev) => {
+      const nextSet = new Set(prev)
+      if (nextSet.has(id)) nextSet.delete(id)
+      else nextSet.add(id)
+      return nextSet
+    })
+    setAnchorId(id)
+  }
+
+  const clearSelection = () => {
+    setSelectedIds(new Set())
+    setAnchorId(null)
+    setStubMsg('')
+  }
+
+  const assignToNew = () => {
+    onCreateInitiative?.(Array.from(selectedIds))
+    clearSelection()
+  }
+
+  const selecting = selectedIds.size > 0
+
   const tabs = [
     { id: 'all', label: 'All', count: b.all.length },
     { id: 'attention', label: 'Needs Attention', count: b.needsAttention.length },
@@ -62,22 +108,40 @@ export default function MyTeamPage() {
     <>
       <PageHeader
         title="My Team"
-        subtitle="Look up any team member's status before a coaching conversation."
+        subtitle="Look up any team member's status, or select people to launch an initiative."
       />
 
       <div className="mb-4">
         <Tabs tabs={tabs} active="all" />
       </div>
 
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <SearchField placeholder="Search team members" />
-        <span className="flex items-center gap-1.5 text-[12px] text-ink-3">
-          Showing all {b.all.length}
-          <InfoNote>Filters and search are shown for structure in this mid-fi prototype; the “All” view is rendered.</InfoNote>
-        </span>
-      </div>
+      {selecting ? (
+        <SelectionBar
+          count={selectedIds.size}
+          stubMsg={stubMsg}
+          onCancel={clearSelection}
+          onAssignNew={assignToNew}
+          onAssignExisting={() => setStubMsg('Assign to existing — coming soon')}
+          onOutreach={() => setStubMsg('Outreach — coming soon')}
+        />
+      ) : (
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <SearchField placeholder="Search team members" />
+          <span className="flex items-center gap-1.5 text-[12px] text-ink-3">
+            Tip: click rows to select · shift-click for a range
+            <InfoNote>Click a team member to select them and reveal bulk actions. Shift-click selects a range. Filters and search are shown for structure in this mid-fi prototype; the “All” view is rendered.</InfoNote>
+          </span>
+        </div>
+      )}
 
-      <DataTable columns={columns} rows={b.all} minW="900px" />
+      <DataTable
+        columns={columns}
+        rows={rows}
+        minW="900px"
+        selectable
+        selectedIds={selectedIds}
+        onRowSelect={onRowSelect}
+      />
     </>
   )
 }

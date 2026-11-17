@@ -8,7 +8,13 @@ const INI_ACCENT = {
   ini04: { text: 'text-ini04', dot: 'bg-ini04', soft: 'bg-ini04-soft' },
 }
 const INI_HEX = { ini01: '#2d6cdf', ini02: '#7c5cdb', ini03: '#14a08a', ini04: '#b9860b' }
-const keyFor = (id) => ({ 'INI-01': 'ini01', 'INI-02': 'ini02', 'INI-03': 'ini03', 'INI-04': 'ini04' }[id] || 'ini01')
+// Accent key for any initiative id. INI-01→ini01 … INI-04→ini04, then cycles
+// (INI-05→ini01) so runtime-created initiatives stay colour-consistent.
+const ACCENT_KEYS = ['ini01', 'ini02', 'ini03', 'ini04']
+const keyFor = (id) => {
+  const n = parseInt(String(id).replace(/\D/g, ''), 10)
+  return Number.isFinite(n) && n > 0 ? ACCENT_KEYS[(n - 1) % 4] : 'ini01'
+}
 
 const TONE = {
   good: { dot: 'bg-good', text: 'text-good', soft: 'bg-good-soft' },
@@ -103,8 +109,8 @@ export function NbaPill({ nba }) {
 }
 
 // ---- Initiative chip ----------------------------------------------------
-export function InitiativeChip({ id, progress, target }) {
-  const a = INI_ACCENT[keyFor(id)]
+export function InitiativeChip({ id, progress, target, accentKey }) {
+  const a = INI_ACCENT[accentKey] || INI_ACCENT[keyFor(id)]
   const prog = progress != null && target != null ? `${progress}/${target}` : null
   return (
     <span className={`inline-flex items-center gap-1 rounded-tile px-2 py-0.5 text-[11px] font-medium ${a.soft} ${a.text}`}>
@@ -179,7 +185,10 @@ export function ConfidenceMeter({ level, label }) {
 // ---- Data table ---------------------------------------------------------
 // Columns may set `sortable: true`; when `sort`/`onSort` are provided the header
 // becomes a button with a sort chevron (double = inactive, up/down = active).
-export function DataTable({ columns, rows, emptyText = 'No team members', minW, sort, onSort }) {
+export function DataTable({
+  columns, rows, emptyText = 'No team members', minW, sort, onSort,
+  selectable = false, selectedIds, onRowSelect,
+}) {
   return (
     <div className="overflow-x-auto rounded-card border border-line bg-card">
       <table className="w-full border-collapse text-left" style={minW ? { minWidth: minW } : undefined}>
@@ -215,15 +224,25 @@ export function DataTable({ columns, rows, emptyText = 'No team members', minW, 
               </td>
             </tr>
           )}
-          {rows.map((row) => (
-            <tr key={row.id} className="border-b border-line last:border-0 transition hover:bg-sunken/60">
-              {columns.map((c) => (
-                <td key={c.key} className={`px-4 py-3 align-middle text-[13px] text-ink ${c.tdClass || ''}`}>
-                  {c.render(row)}
-                </td>
-              ))}
-            </tr>
-          ))}
+          {rows.map((row) => {
+            const selected = selectable && selectedIds?.has(row.id)
+            return (
+              <tr
+                key={row.id}
+                onClick={selectable ? (e) => onRowSelect?.(row.id, e) : undefined}
+                aria-selected={selectable ? !!selected : undefined}
+                className={`border-b border-line last:border-0 transition ${
+                  selectable ? 'cursor-pointer select-none ' : ''
+                }${selected ? 'bg-tint-blue hover:bg-tint-blue' : 'hover:bg-sunken/60'}`}
+              >
+                {columns.map((c) => (
+                  <td key={c.key} className={`px-4 py-3 align-middle text-[13px] text-ink ${c.tdClass || ''}`}>
+                    {c.render(row)}
+                  </td>
+                ))}
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
