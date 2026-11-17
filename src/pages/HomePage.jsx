@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import {
   PageHeader, SectionTitle, StatCard, InitiativeCard, DataTable,
-  Avatar, RiskBadge, NbaPill, ViewAllLink, ConfidenceMeter,
+  Avatar, RiskBadge, NbaPill, ConfidenceMeter, AiDisclosure,
 } from '../components/ui'
+import { useData } from '../lib/store'
 import {
-  overview, initiativeStats, buckets, riskMeta, riskRank,
-  confMeta, confRank, EL_NAME, meta,
+  riskMeta, riskRank, confMeta, confRank, EL_NAME, meta,
 } from '../lib/teamData'
 
 const HOME_LIMIT = 5
@@ -87,6 +87,7 @@ function MiniTable({ title, note, rows, columns, onMore, defaultSort }) {
 }
 
 export default function HomePage({ setPage }) {
+  const { overview, initiativeStats, buckets } = useData()
   const o = overview()
   const inis = initiativeStats()
   const b = buckets()
@@ -113,7 +114,6 @@ export default function HomePage({ setPage }) {
       <section className="mb-9">
         <SectionTitle
           note="Score = combined progress toward target across assigned members. Falling behind = active members below the Q4 on-pace line (43.5%)."
-          action={<ViewAllLink onClick={() => setPage('initiatives')}>View all initiatives</ViewAllLink>}
         >
           Initiatives
         </SectionTitle>
@@ -142,6 +142,7 @@ export default function HomePage({ setPage }) {
         />
       </section>
 
+      <AiDisclosure className="mb-2" />
     </>
   )
 }

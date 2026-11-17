@@ -8,7 +8,13 @@ const INI_ACCENT = {
   ini04: { text: 'text-ini04', dot: 'bg-ini04', soft: 'bg-ini04-soft' },
 }
 const INI_HEX = { ini01: '#2d6cdf', ini02: '#7c5cdb', ini03: '#14a08a', ini04: '#b9860b' }
-const keyFor = (id) => ({ 'INI-01': 'ini01', 'INI-02': 'ini02', 'INI-03': 'ini03', 'INI-04': 'ini04' }[id] || 'ini01')
+// Accent key for any initiative id. INI-01→ini01 … INI-04→ini04, then cycles
+// (INI-05→ini01) so runtime-created initiatives stay colour-consistent.
+const ACCENT_KEYS = ['ini01', 'ini02', 'ini03', 'ini04']
+const keyFor = (id) => {
+  const n = parseInt(String(id).replace(/\D/g, ''), 10)
+  return Number.isFinite(n) && n > 0 ? ACCENT_KEYS[(n - 1) % 4] : 'ini01'
+}
 
 const TONE = {
   good: { dot: 'bg-good', text: 'text-good', soft: 'bg-good-soft' },
@@ -17,16 +23,8 @@ const TONE = {
   muted: { dot: 'bg-ink-3', text: 'text-ink-3', soft: 'bg-sunken' },
 }
 
-// ---- Avatar (initials on a soft deterministic tint) ---------------------
-const AV_TINTS = ['#e6f1fd', '#edeefc', '#e2f6f2', '#fbf2da', '#fde9ef', '#e9f6e7']
-const AV_INK = ['#2d6cdf', '#7c5cdb', '#14a08a', '#b9860b', '#d6557f', '#3a9d5b']
-function hash(s) {
-  let h = 0
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0
-  return h
-}
+// ---- Avatar (initials on a neutral tint from the palette) ---------------
 export function Avatar({ name, size = 32 }) {
-  const i = hash(name) % AV_INK.length
   const initials = name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase()
   return (
     <span
@@ -34,8 +32,8 @@ export function Avatar({ name, size = 32 }) {
       style={{
         width: size,
         height: size,
-        background: AV_TINTS[i],
-        color: AV_INK[i],
+        background: 'var(--color-line-strong)',
+        color: 'var(--color-ink-2)',
         fontSize: size * 0.4,
       }}
     >
@@ -84,8 +82,7 @@ export function RiskBadge({ tone, label }) {
   const t = TONE[tone] || TONE.muted
   if (tone === 'muted') return <span className="text-ink-3">—</span>
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[12px] font-medium ${t.soft} ${t.text}`}>
-      <span className={`h-1.5 w-1.5 rounded-full ${t.dot}`} />
+    <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-[12px] font-medium ${t.soft} ${t.text}`}>
       {label}
     </span>
   )
@@ -95,20 +92,17 @@ export function RiskBadge({ tone, label }) {
 export function NbaPill({ nba }) {
   if (!nba || nba.muted) return <span className="text-ink-3">—</span>
   return (
-    <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-medium text-ink">
-      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
+    <span className="inline-flex items-center whitespace-nowrap text-[12px] font-medium text-ink">
       {nba.text}
     </span>
   )
 }
 
-// ---- Initiative chip ----------------------------------------------------
+// ---- Initiative chip (neutral; no colour dot) ---------------------------
 export function InitiativeChip({ id, progress, target }) {
-  const a = INI_ACCENT[keyFor(id)]
   const prog = progress != null && target != null ? `${progress}/${target}` : null
   return (
-    <span className={`inline-flex items-center gap-1 rounded-tile px-2 py-0.5 text-[11px] font-medium ${a.soft} ${a.text}`}>
-      <span className={`h-1.5 w-1.5 rounded-full ${a.dot}`} />
+    <span className="inline-flex items-center gap-1 rounded-tile bg-sunken px-2 py-0.5 text-[11px] font-medium text-ink-2">
       {id}
       {prog && <span className="opacity-70">· {prog}</span>}
     </span>
@@ -179,7 +173,10 @@ export function ConfidenceMeter({ level, label }) {
 // ---- Data table ---------------------------------------------------------
 // Columns may set `sortable: true`; when `sort`/`onSort` are provided the header
 // becomes a button with a sort chevron (double = inactive, up/down = active).
-export function DataTable({ columns, rows, emptyText = 'No team members', minW, sort, onSort }) {
+export function DataTable({
+  columns, rows, emptyText = 'No team members', minW, sort, onSort,
+  selectable = false, selectedIds, onRowSelect,
+}) {
   return (
     <div className="overflow-x-auto rounded-card border border-line bg-card">
       <table className="w-full border-collapse text-left" style={minW ? { minWidth: minW } : undefined}>
@@ -215,15 +212,25 @@ export function DataTable({ columns, rows, emptyText = 'No team members', minW, 
               </td>
             </tr>
           )}
-          {rows.map((row) => (
-            <tr key={row.id} className="border-b border-line last:border-0 transition hover:bg-sunken/60">
-              {columns.map((c) => (
-                <td key={c.key} className={`px-4 py-3 align-middle text-[13px] text-ink ${c.tdClass || ''}`}>
-                  {c.render(row)}
-                </td>
-              ))}
-            </tr>
-          ))}
+          {rows.map((row) => {
+            const selected = selectable && selectedIds?.has(row.id)
+            return (
+              <tr
+                key={row.id}
+                onClick={selectable ? (e) => onRowSelect?.(row.id, e) : undefined}
+                aria-selected={selectable ? !!selected : undefined}
+                className={`border-b border-line last:border-0 transition ${
+                  selectable ? 'cursor-pointer select-none ' : ''
+                }${selected ? 'bg-tint-blue hover:bg-tint-blue' : 'hover:bg-sunken/60'}`}
+              >
+                {columns.map((c) => (
+                  <td key={c.key} className={`px-4 py-3 align-middle text-[13px] text-ink ${c.tdClass || ''}`}>
+                    {c.render(row)}
+                  </td>
+                ))}
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
@@ -296,6 +303,16 @@ export function ViewAllLink({ children, onClick }) {
     >
       {children}
     </button>
+  )
+}
+
+// Standard AI disclosure, shown wherever AI signals/recommendations appear.
+export function AiDisclosure({ className = '' }) {
+  return (
+    <p className={`flex items-start gap-1.5 text-[12px] leading-snug text-ink-3 ${className}`}>
+      <Info size={13} className="mt-0.5 shrink-0" />
+      AI recommendations are also not 100% accurate. Always check with the person to make sure.
+    </p>
   )
 }
 

@@ -4,7 +4,8 @@ import { Avatar } from './ui'
 const NAV = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'team', label: 'My Team', icon: Users },
-  { id: 'initiatives', label: 'Initiatives', icon: Flag },
+  // Placeholder for this prototype — present in the nav but not navigable.
+  { id: 'initiatives', label: 'Initiatives', icon: Flag, disabled: true },
 ]
 
 function LeftNav({ page, setPage }) {
@@ -26,13 +27,19 @@ function LeftNav({ page, setPage }) {
             return (
               <button
                 key={item.id}
-                onClick={() => setPage(item.id)}
+                onClick={() => { if (!item.disabled) setPage(item.id) }}
+                disabled={item.disabled}
+                aria-disabled={item.disabled || undefined}
                 aria-current={on ? 'page' : undefined}
                 className={`flex items-center gap-2.5 rounded-tile px-3 py-2 text-[14px] font-medium transition ${
-                  on ? 'bg-sunken text-ink' : 'text-ink-2 hover:bg-sunken/60 hover:text-ink'
+                  item.disabled
+                    ? 'cursor-not-allowed text-ink-3 opacity-60'
+                    : on
+                      ? 'bg-sunken text-ink'
+                      : 'text-ink-2 hover:bg-sunken/60 hover:text-ink'
                 }`}
               >
-                <Icon size={18} className={on ? 'text-ink' : 'text-ink-3'} />
+                <Icon size={18} className={on && !item.disabled ? 'text-ink' : 'text-ink-3'} />
                 {item.label}
               </button>
             )
@@ -58,6 +65,7 @@ function TopHeader() {
         <span className="text-left leading-tight">
           <span className="block text-[13px] font-semibold text-ink">Diana Nguyen</span>
           <span className="block text-[11px] text-ink-2">Enablement Lead</span>
+          <span className="block text-[11px] text-ink-3">diana.nguyen@example.com</span>
         </span>
         <ChevronDown size={16} className="text-ink-3" />
       </button>

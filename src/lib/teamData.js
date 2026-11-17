@@ -108,19 +108,19 @@ const byName = (a, b) => a.name.localeCompare(b.name)
 const byPriority = (a, b) => b.priority - a.priority
 
 // --- aggregate selectors -------------------------------------------------
-export function overview() {
-  const assigned = members.filter(isAssigned).length
+export function overview(mem = members, inis = initiatives) {
+  const assigned = mem.filter(isAssigned).length
   return {
-    members: members.length,
-    initiatives: initiatives.length,
+    members: mem.length,
+    initiatives: inis.length,
     assigned,
-    unassigned: members.length - assigned,
+    unassigned: mem.length - assigned,
   }
 }
 
-export function initiativeStats() {
-  return initiatives.map((ini) => {
-    const rows = members.map((m) => m.initiatives[ini.id] || {})
+export function initiativeStats(inis = initiatives, mem = members) {
+  return inis.map((ini) => {
+    const rows = mem.map((m) => m.initiatives[ini.id] || {})
     const active = rows.filter((r) => ACTIVE.has(r.status))
     const numeric = active.filter(
       (r) => typeof r.progress === 'number' && r.target,
@@ -137,8 +137,8 @@ export function initiativeStats() {
     return {
       id: ini.id,
       name: ini.name,
-      short: INI[ini.id]?.short ?? ini.name,
-      key: INI[ini.id]?.key ?? 'ini01',
+      short: ini.short ?? INI[ini.id]?.short ?? ini.name,
+      key: ini.key ?? INI[ini.id]?.key ?? 'ini01',
       metric: ini.metric,
       targetPerMember: ini.target_per_member,
       assigned: active.length,
@@ -154,14 +154,14 @@ export function initiativeStats() {
 // Assumption: the dataset has no ground-truth "accuracy", so we surface the
 // model's own confidence rating (its self-assessed data completeness/freshness)
 // as the honest stand-in. Null confidence is counted as insufficient_data.
-export function aiConfidence() {
+export function aiConfidence(mem = members) {
   const levels = { high: 0, medium: 0, low: 0, insufficient_data: 0 }
-  for (const m of members) {
+  for (const m of mem) {
     const c = m.ai?.confidence
     if (c && c in levels) levels[c] += 1
     else levels.insufficient_data += 1
   }
-  const total = members.length
+  const total = mem.length
   return {
     total,
     ...levels,
@@ -170,11 +170,52 @@ export function aiConfidence() {
   }
 }
 
-export function buckets() {
-  const rows = members.map(toRow)
+// Premade eligibility criteria, linked to the data model. Segment and tenure
+// options are derived from the actual team; book criteria are a checkable field
+// plus a threshold the lead enters. Each selected criterion is a structured
+// object so it can be matched against members (for the recommendation tooltip).
+export function eligibilityOptions(mem = members) {
+  const segments = [...new Set(mem.map((m) => m.profile?.segment).filter(Boolean))].sort()
+  const tenures = [...new Set(mem.map((m) => m.profile?.tenure_band).filter(Boolean))].sort()
+  return {
+    segment: segments.map((s) => ({ id: `segment:${s}`, type: 'segment', value: s, label: s })),
+    tenure: tenures.map((t) => ({ id: `tenure:${t}`, type: 'tenure', value: t, label: `Tenure ${t}` })),
+  }
+}
+
+// Book criteria the lead checks and gives a threshold to. Defaults mirror the
+// criteria the seeded initiatives (INI-01…04) already use.
+export const BOOK_FIELDS = [
+  { id: 'active_clients', label: 'Active clients', defaultValue: 20 },
+  { id: 'dormant_clients', label: 'Dormant clients', defaultValue: 10 },
+  { id: 'whitespace_clients', label: 'Whitespace clients', defaultValue: 5 },
+]
+
+// Does a member satisfy a single structured criterion?
+export function criterionMatches(member, c) {
+  if (c.type === 'segment') return member.profile?.segment === c.value
+  if (c.type === 'tenure') return member.profile?.tenure_band === c.value
+  if (c.type === 'book') return (member.book?.[c.field] ?? 0) >= Number(c.value)
+  return false
+}
+
+export function matchedCriteria(member, criteria = []) {
+  return criteria.filter((c) => criterionMatches(member, c))
+}
+
+// How fresh is this member's activity data (data_quality.activity_data_age_days).
+export function dataAgeLabel(member) {
+  const d = member.data_quality?.activity_data_age_days
+  if (d == null) return 'Unknown'
+  if (d === 0) return 'Today'
+  return `${d} day${d === 1 ? '' : 's'} ago`
+}
+
+export function buckets(mem = members) {
+  const rows = mem.map(toRow)
   const all = [...rows].sort(byName)
-  const attn = members.filter(needsAttention).map(toRow).sort(byPriority)
-  const unassigned = members.filter(isUnassigned).map(toRow).sort(byName)
-  const fresh = members.filter(isNew).map(toRow).sort(byName)
+  const attn = mem.filter(needsAttention).map(toRow).sort(byPriority)
+  const unassigned = mem.filter(isUnassigned).map(toRow).sort(byName)
+  const fresh = mem.filter(isNew).map(toRow).sort(byName)
   return { all, needsAttention: attn, unassigned, new: fresh }
 }
