@@ -1,1 +1,62 @@
 @import "tailwindcss";
+
+/* ---- The Command Center — design tokens (from SnowUI / Dashboard DS) ---- */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* surfaces */
+  --color-canvas: #f7f7f8;
+  --color-card: #ffffff;
+  --color-sunken: #f2f3f5;
+  --color-tint-blue: #e6f1fd;
+  --color-tint-purple: #edeefc;
+
+  /* ink */
+  --color-ink: #1c1c1e;
+  --color-ink-2: #595961;
+  --color-ink-3: #8a8a93;
+  --color-line: #ececef;
+  --color-line-strong: #e0e0e4;
+
+  /* status */
+  --color-good: #1f9d57;
+  --color-good-soft: #e7f6ec;
+  --color-warn: #b67e00;
+  --color-warn-soft: #faf1d8;
+  --color-bad: #d93a3f;
+  --color-bad-soft: #fcebec;
+
+  /* initiative accents */
+  --color-ini01: #2d6cdf;
+  --color-ini01-soft: #e6f1fd;
+  --color-ini02: #7c5cdb;
+  --color-ini02-soft: #edeefc;
+  --color-ini03: #14a08a;
+  --color-ini03-soft: #e2f6f2;
+  --color-ini04: #b9860b;
+  --color-ini04-soft: #fbf2da;
+
+  /* link (dark teal, for "view all" text links) */
+  --color-link: #1f6a73;
+
+  /* radii */
+  --radius-card: 16px;
+  --radius-tile: 12px;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    margin: 0;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  * {
+    border-color: var(--color-line);
+  }
+}
